@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rememberme" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="znX-26-hHM">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="euG-yU-OGr">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-male" translatesAutoresizingMaskIntoConstraints="NO" id="z0P-YG-uNm">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="z0P-YG-uNm" secondAttribute="height" multiplier="1:1" id="gJO-SR-WAe"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNd-ni-r8D">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zpy-jM-uBw">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-female" translatesAutoresizingMaskIntoConstraints="NO" id="6yd-Lp-wEp">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="6yd-Lp-wEp" secondAttribute="height" multiplier="1:1" id="Mca-P5-l7H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-V6-GNz">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="80S-zT-eRH">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-male" translatesAutoresizingMaskIntoConstraints="NO" id="B4s-sZ-1gX">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="B4s-sZ-1gX" secondAttribute="height" multiplier="1:1" id="NR4-Vn-2Qw"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6B-kw-J92">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.90980392156862744" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="znX-26-hHM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-40" id="Eau-Xf-193"/>
+                            <constraint firstItem="z0P-YG-uNm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="K8Z-7f-2SJ"/>
+                            <constraint firstItem="B4s-sZ-1gX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="OBa-gf-u6v"/>
+                            <constraint firstItem="znX-26-hHM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Vrs-qU-RtC"/>
+                            <constraint firstItem="znX-26-hHM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="idy-I0-Ejw"/>
+                            <constraint firstItem="znX-26-hHM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kqf-Kf-lJP"/>
+                            <constraint firstItem="6yd-Lp-wEp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="pV4-wE-xNO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstStackView" destination="euG-yU-OGr" id="DAK-yf-hpA"/>
+                        <outlet property="imgFirstContactImage" destination="z0P-YG-uNm" id="D7g-cv-u9J"/>
+                        <outlet property="imgSecondContactImage" destination="6yd-Lp-wEp" id="WiO-Ro-K5R"/>
+                        <outlet property="imgThirdContactImage" destination="B4s-sZ-1gX" id="pvN-8A-TAw"/>
+                        <outlet property="lblFirstContactName" destination="GNd-ni-r8D" id="FmA-jO-PJk"/>
+                        <outlet property="lblSecondContactName" destination="gdg-V6-GNz" id="peY-Rw-4Lf"/>
+                        <outlet property="lblThirdContactName" destination="b6B-kw-J92" id="XIK-3B-cV1"/>
+                        <outlet property="mainStackView" destination="znX-26-hHM" id="gz1-7h-ylH"/>
+                        <outlet property="secondStackView" destination="zpy-jM-uBw" id="HYr-mh-gsh"/>
+                        <outlet property="thirdStackView" destination="80S-zT-eRH" id="ARI-nJ-tXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="avatar-female" width="512" height="512"/>
+        <image name="avatar-male" width="512" height="512"/>
+    </resources>
+</document>
