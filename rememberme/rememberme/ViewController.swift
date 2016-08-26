@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     var userAccessGranted : Bool = false
     var dataArray : NSMutableArray?
     
+    var intSelectedContacts = (first: 0, second: 0, third: 0)
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var mainStackView: UIStackView!
@@ -33,7 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgThirdContactImage: UIImageView!
     @IBOutlet weak var lblThirdContactName: UILabel!
     
-//    @IBOutlet weak var constraintHeightContactStackView: NSLayoutConstraint!
+    // Contact Details
+    @IBOutlet weak var lblPhoneNumbers: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -60,6 +64,7 @@ class ViewController: UIViewController {
         self.thirdStackView.addGestureRecognizer(tap3)
         
         self.contactDetailStackView.isHidden = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -109,7 +114,7 @@ class ViewController: UIViewController {
         
         dataArray = NSMutableArray()
         
-        let toFetch = [CNContactGivenNameKey, CNContactImageDataKey, CNContactFamilyNameKey, CNContactImageDataAvailableKey]
+        let toFetch = [CNContactGivenNameKey, CNContactImageDataKey, CNContactFamilyNameKey, CNContactImageDataAvailableKey, CNContactPhoneNumbersKey]
         let request = CNContactFetchRequest(keysToFetch: toFetch as [CNKeyDescriptor])
         
         do{
@@ -132,7 +137,7 @@ class ViewController: UIViewController {
                     name = contact.givenName
                 }
                 
-                let data = Data(name: name, image: userImage)
+                let data = Data(name: name, image: userImage, contact: contact)
                 self.dataArray?.add(data)
                 
             }
@@ -148,28 +153,17 @@ class ViewController: UIViewController {
     }
 
     func loadContacts(){
-        for i in 0..<3 {
-            let randomInt = Int32.random(lower: 0, ((dataArray?.count)! - 1) )
-            
-            let contact = dataArray![Int(randomInt)] as! Data
-            
-            print(contact.name)
-            
-            switch i {
-            case 0:
-                imgFirstContactImage.image = contact.image
-                lblFirstContactName.text = contact.name
-            case 1:
-                imgSecondContactImage.image = contact.image
-                lblSecondContactName.text = contact.name
-            case 2:
-                imgThirdContactImage.image = contact.image
-                lblThirdContactName.text = contact.name
-            default:
-                print("invalid case")
-            }
-            
-        }
+        intSelectedContacts = (Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ))
+        
+        imgFirstContactImage.image = (dataArray?[intSelectedContacts.first] as! Data).image
+        lblFirstContactName.text = (dataArray?[intSelectedContacts.first] as! Data).name
+        
+        imgSecondContactImage.image = (dataArray?[intSelectedContacts.second] as! Data).image
+        lblSecondContactName.text = (dataArray?[intSelectedContacts.second] as! Data).name
+        
+        imgThirdContactImage.image = (dataArray?[intSelectedContacts.third] as! Data).image
+        lblThirdContactName.text = (dataArray?[intSelectedContacts.third] as! Data).name
+        
     }
     
     func viewTapped() {
@@ -196,6 +190,8 @@ class ViewController: UIViewController {
         _ = thirdStackView.isHidden.toggle()
         
         contactDetailStackView.isHidden = !secondStackView.isHidden
+        
+        loadContactDetails(intContact: intSelectedContacts.first)
 
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
@@ -204,8 +200,10 @@ class ViewController: UIViewController {
     func secondStackViewTapped() {
         _ = firstStackView.isHidden.toggle()
         _ = thirdStackView.isHidden.toggle()
-    
+        
         contactDetailStackView.isHidden = !firstStackView.isHidden
+        
+        loadContactDetails(intContact: intSelectedContacts.second)
         
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
@@ -217,9 +215,22 @@ class ViewController: UIViewController {
         
         contactDetailStackView.isHidden = !firstStackView.isHidden
         
+        loadContactDetails(intContact: intSelectedContacts.third)
+        
+        loadContactDetails(intContact: intSelectedContacts.third)
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
         })
+    }
+    
+    func loadContactDetails(intContact: Int) {
+        if contactDetailStackView.isHidden {
+            return
+        }
+        let contact = (dataArray?[intContact] as! Data).contact
+        if contact.phoneNumbers.count > 0 {
+            lblPhoneNumbers.text = contact.phoneNumbers[0].value.stringValue
+        }
     }
     
 }
@@ -231,10 +242,12 @@ class Data {
     
     let name : String
     let image : UIImage
+    let contact : CNContact
     
-    init(name : String, image : UIImage) {
+    init(name : String, image : UIImage, contact : CNContact) {
         self.image = image
         self.name = name
+        self.contact = contact
     }
     
 }

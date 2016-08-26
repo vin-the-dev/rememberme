@@ -76,6 +76,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V75-wL-EmZ">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ith-ke-o46">
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -115,6 +120,7 @@
                         <outlet property="imgSecondContactImage" destination="6yd-Lp-wEp" id="WiO-Ro-K5R"/>
                         <outlet property="imgThirdContactImage" destination="B4s-sZ-1gX" id="pvN-8A-TAw"/>
                         <outlet property="lblFirstContactName" destination="GNd-ni-r8D" id="FmA-jO-PJk"/>
+                        <outlet property="lblPhoneNumbers" destination="weA-f4-m9c" id="sQe-7f-3Rz"/>
                         <outlet property="lblSecondContactName" destination="gdg-V6-GNz" id="peY-Rw-4Lf"/>
                         <outlet property="lblThirdContactName" destination="b6B-kw-J92" id="XIK-3B-cV1"/>
                         <outlet property="mainStackView" destination="znX-26-hHM" id="gz1-7h-ylH"/>

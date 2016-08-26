@@ -9,18 +9,15 @@
 import Foundation
 import UIKit
 
-public extension Int32 {
+public extension Int {
     /// SwiftRandom extension
-    public static func random(range: Range<Int>) -> Int32 {
+    public static func random(range: Range<Int>) -> Int {
         return random(lower: range.lowerBound, range.upperBound)
     }
     
     /// SwiftRandom extension
-    ///
-    /// - note: Using `Int` as parameter type as we usually just want to write `Int32.random(13, 37)` and not `Int32.random(Int32(13), Int32(37))`
-    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int32 {
-        let r = arc4random_uniform(UInt32(Int64(upper) - Int64(lower)))
-        return Int32(Int64(r) + Int64(lower))
+    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
+        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
 }
 
