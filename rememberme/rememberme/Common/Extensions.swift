@@ -38,3 +38,11 @@ public extension UIColor {
         }
     }
 }
+
+extension Bool {
+    
+    public mutating func toggle() -> Bool {
+        self = !self
+        return self
+    }
+}
