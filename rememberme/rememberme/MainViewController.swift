@@ -9,7 +9,7 @@
 import UIKit
 import Contacts
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var userAccessGranted : Bool = false
@@ -49,16 +49,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         loadContacts()
         
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.viewSwiped))
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
         self.view.addGestureRecognizer(swipe)
         
-        let tap1 = UITapGestureRecognizer(target: self, action: #selector(ViewController.firstStackViewTapped))
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(MainViewController.firstStackViewTapped))
         self.firstStackView.addGestureRecognizer(tap1)
         
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(ViewController.secondStackViewTapped))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(MainViewController.secondStackViewTapped))
         self.secondStackView.addGestureRecognizer(tap2)
         
-        let tap3 = UITapGestureRecognizer(target: self, action: #selector(ViewController.thirdStackViewTapped))
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(MainViewController.thirdStackViewTapped))
         self.thirdStackView.addGestureRecognizer(tap3)
         
         self.contactDetailStackView.isHidden = true
@@ -116,6 +116,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.detailTextLabel?.text = selectedDetailContact.contactDetails[indexPath.row].value
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedDetailContact.contactDetails[indexPath.row].type == ContactDetailType.Phone {
+            if let url = NSURL(string: "tel://\(selectedDetailContact.contactDetails[indexPath.row].value)") {
+                UIApplication.shared.openURL(url as URL)
+            }
+        }
+        else {
+            
+            let email = selectedDetailContact.contactDetails[indexPath.row].value
+            let subject = "Remember me?".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            
+            let body = "Remembering your through this amazing app Remember me?".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            let url = URL(string: "mailto:\(email)?subject=\(subject!)&body=\(body!)")
+            UIApplication.shared.openURL(url!)
+            
+        }
     }
 
     // MARK: Custom Functions
@@ -179,6 +197,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //self.tableView.reloadData()
         
     }
+    
+    //MARK: Custom Functions
     
     func viewSwiped() {
         loadContacts()
@@ -267,94 +287,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         tableView.reloadData()
-    }
-    
-}
-
-import UIKit
-
-class Data {
-    
-    let name : String
-    let image : UIImage
-    let contact : CNContact
-    
-    var contactDetails : [(label: String, value: String, image: UIImage?)]
-    
-    init(name : String, image : UIImage, contact : CNContact) {
-        self.image = image
-        self.name = name
-        self.contact = contact
-        
-        contactDetails = [(label: String, value: String, image: UIImage?)] ()
-        
-        if contact.phoneNumbers.count > 0 {
-            for ph in contact.phoneNumbers {
-                var lbl = ""
-                if ph.label != nil {
-                    switch ph.label! {
-                    case CNLabelPhoneNumberiPhone:
-                        lbl = "iPhone"
-                        break
-                    case CNLabelPhoneNumberMobile:
-                        lbl = "Mobile"
-                        break
-                    case CNLabelPhoneNumberMain:
-                        lbl = "Main"
-                        break
-                    case CNLabelPhoneNumberHomeFax:
-                        lbl = "Home Fax"
-                        break
-                    case CNLabelPhoneNumberWorkFax:
-                        lbl = "Work Fax"
-                        break
-                    case CNLabelPhoneNumberOtherFax:
-                        lbl = "Other Fax"
-                        break
-                    case CNLabelPhoneNumberPager:
-                        lbl = "Number Pager"
-                        break
-                    case CNLabelHome:
-                        lbl = "Home"
-                        break
-                    case CNLabelWork:
-                        lbl = "Work"
-                        break
-                    case CNLabelOther:
-                        lbl = "Other"
-                        break
-                    default:
-                        lbl = ph.label!
-                        break
-                    }
-                }
-                contactDetails.append((lbl, ph.value.stringValue, nil))
-            }
-        }
-        if contact.emailAddresses.count > 0 {
-            for em in contact.emailAddresses {
-                
-                var lbl = "Email"
-                if em.label != nil {
-                    switch em.label! {
-                    case CNLabelHome:
-                        lbl = "Home"
-                        break
-                    case CNLabelWork:
-                        lbl = "Work"
-                        break
-                    case CNLabelOther:
-                        lbl = "Other"
-                        break
-                    default:
-                        lbl = em.label!
-                        break
-                    }
-                }
-                
-                contactDetails.append((lbl, em.value as String, nil))
-            }
-        }
     }
     
 }
