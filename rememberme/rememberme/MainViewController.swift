@@ -49,7 +49,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         loadContacts()
         
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
+        var swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
+        swipe.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipe)
+        
+        swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
+        swipe.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipe)
         
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(MainViewController.firstStackViewTapped))
