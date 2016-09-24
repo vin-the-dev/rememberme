@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		22135B541D90092E000C4471 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22135B531D90092E000C4471 /* Data.swift */; };
 		22487F281D6F55B500E3526F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22487F271D6F55B500E3526F /* Extensions.swift */; };
+		22C6468E1D96DE0D00F8168D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C6468D1D96DE0D00F8168D /* Assets.xcassets */; };
 		22DCA52C1D92E81800985C90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22DCA52B1D92E81800985C90 /* GoogleService-Info.plist */; };
 		22DD7ED41D6CB92500623BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD7ED31D6CB92500623BF7 /* AppDelegate.swift */; };
 		22DD7ED61D6CB92500623BF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD7ED51D6CB92500623BF7 /* MainViewController.swift */; };
 		22DD7ED91D6CB92500623BF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DD7ED71D6CB92500623BF7 /* Main.storyboard */; };
-		22DD7EDB1D6CB92500623BF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DD7EDA1D6CB92500623BF7 /* Assets.xcassets */; };
 		22DD7EDE1D6CB92500623BF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DD7EDC1D6CB92500623BF7 /* LaunchScreen.storyboard */; };
 		73490940582FB48047A83DEA /* Pods_rememberme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0EF30C483318947CA0E774 /* Pods_rememberme.framework */; };
 /* End PBXBuildFile section */
@@ -21,12 +21,12 @@
 /* Begin PBXFileReference section */
 		22135B531D90092E000C4471 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		22487F271D6F55B500E3526F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Common/Extensions.swift; sourceTree = "<group>"; };
+		22C6468D1D96DE0D00F8168D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DCA52B1D92E81800985C90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22DD7ED01D6CB92500623BF7 /* rememberme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememberme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DD7ED31D6CB92500623BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22DD7ED51D6CB92500623BF7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		22DD7ED81D6CB92500623BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22DD7EDA1D6CB92500623BF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DD7EDD1D6CB92500623BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22DD7EDF1D6CB92500623BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DCB41951D89BA6910EF3E18 /* Pods-rememberme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rememberme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rememberme/Pods-rememberme.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 				22DD7ED31D6CB92500623BF7 /* AppDelegate.swift */,
 				22DD7ED51D6CB92500623BF7 /* MainViewController.swift */,
 				22DD7ED71D6CB92500623BF7 /* Main.storyboard */,
-				22DD7EDA1D6CB92500623BF7 /* Assets.xcassets */,
 				22DD7EDC1D6CB92500623BF7 /* LaunchScreen.storyboard */,
+				22C6468D1D96DE0D00F8168D /* Assets.xcassets */,
 				22DD7EDF1D6CB92500623BF7 /* Info.plist */,
 				22DCA52B1D92E81800985C90 /* GoogleService-Info.plist */,
 				22135B531D90092E000C4471 /* Data.swift */,
@@ -171,7 +171,7 @@
 			files = (
 				22DD7EDE1D6CB92500623BF7 /* LaunchScreen.storyboard in Resources */,
 				22DCA52C1D92E81800985C90 /* GoogleService-Info.plist in Resources */,
-				22DD7EDB1D6CB92500623BF7 /* Assets.xcassets in Resources */,
+				22C6468E1D96DE0D00F8168D /* Assets.xcassets in Resources */,
 				22DD7ED91D6CB92500623BF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

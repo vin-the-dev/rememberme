@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -109,12 +109,20 @@
                                     <constraint firstItem="6yd-Lp-wEp" firstAttribute="height" secondItem="z0P-YG-uNm" secondAttribute="height" id="tTa-ML-F39"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cv-Sj-DPC">
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="btnSkipTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F8G-F2-M0c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Cv-Sj-DPC" secondAttribute="trailing" id="Azw-Qu-bRg"/>
                             <constraint firstItem="80S-zT-eRH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" priority="750" id="KG7-aY-cek"/>
                             <constraint firstAttribute="trailingMargin" secondItem="znX-26-hHM" secondAttribute="trailing" id="OAn-U3-RhO"/>
                             <constraint firstItem="z0P-YG-uNm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="UgY-7M-BN4"/>
+                            <constraint firstItem="2Cv-Sj-DPC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YeD-Is-ilT"/>
                             <constraint firstItem="tib-gO-ZgC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" priority="999" id="aFi-Du-Sd8"/>
                             <constraint firstItem="euG-yU-OGr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" priority="750" id="dB4-Nn-riu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="znX-26-hHM" secondAttribute="bottom" constant="8" id="e96-KK-an9"/>
@@ -124,6 +132,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSkip" destination="2Cv-Sj-DPC" id="BnX-Qa-li2"/>
                         <outlet property="contactDetailStackView" destination="tib-gO-ZgC" id="isE-Hm-ZX2"/>
                         <outlet property="firstStackView" destination="euG-yU-OGr" id="DAK-yf-hpA"/>
                         <outlet property="imgFirstContactImage" destination="z0P-YG-uNm" id="D7g-cv-u9J"/>
