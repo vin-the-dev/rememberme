@@ -8,11 +8,8 @@
 
 import UIKit
 import Contacts
-import paper_onboarding
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PaperOnboardingDataSource {
-    
-    let onboarding = PaperOnboarding(itemsCount: 3)
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var userAccessGranted : Bool = false
@@ -20,6 +17,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var intSelectedContacts = (first: 0, second: 0, third: 0)
     var selectedDetailContact : Data!
+    
+    var boolOnBoardingShown = false
     
     // MARK: IBOutlets
     
@@ -75,25 +74,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.tableView.separatorColor = UIColor.clear
         
-        onboarding.dataSource = self
-        onboarding.translatesAutoresizingMaskIntoConstraints = false
-        view.insertSubview(onboarding, belowSubview: btnSkip) //addSubview(onboarding)
-        
-        // add constraints
-        for attribute: NSLayoutAttribute in [.left, .right, .top, .bottom] {
-            let constraint = NSLayoutConstraint(item: onboarding,
-                                                attribute: attribute,
-                                                relatedBy: .equal,
-                                                toItem: view,
-                                                attribute: attribute,
-                                                multiplier: 1,
-                                                constant: 0)
-            view.addConstraint(constraint)
-        }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if !boolOnBoardingShown {
+            let onBoarding = self.storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+            self.present(onBoarding, animated: true, completion: {
+                self.boolOnBoardingShown = true
+            })
+        }
         
         loadBackGroundColor()
         
@@ -162,12 +152,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    // MARK: IB Actions
-    
-    @IBAction func btnSkipTapped(_ sender: AnyObject) {
-        onboarding.removeFromSuperview()
-        btnSkip.removeFromSuperview()
-    }
 
     // MARK: Custom Functions
     
@@ -231,25 +215,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    //MARK: Paper On Borading
-    
-    func onboardingItemsCount() -> Int {
-        return 3
-    }
-    
-    func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
-        let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 36.0)
-        let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
-        
-        //(imageName: String, title: String, description: String, iconName: String, color: UIColor, titleColor: UIColor, descriptionColor: UIColor, titleFont: UIFont, descriptionFont: UIFont)
-        
-        return [
-            ("theme", "Remember Me!", "We have more than on an average of more than 500 contacts. Most of them from facebook, outlook etc. But how many of them we contact on a weekly basis. Not more have 10-20. Rest is just there in the contact list and we never know most of them. Remember Me! will select randomly set of three contacts", "", UIColor(red:0.40, green:0.56, blue:0.71, alpha:1.00), UIColor.white, UIColor.white, titleFont,descriptionFont),
-            ("Contact Card", "Contacts", "Swipe Left/Right to refresh the list, You may find your old friend or an old colleague. Tap the contact and see more details. You can directlycall, sms or e-mail them for here.I bet you will find a person you long forgot if the first few swipes.Hope this will help you to get aqquiented with some one you forgot.", "", UIColor(red:0.40, green:0.69, blue:0.71, alpha:1.00), UIColor.white, UIColor.white, titleFont,descriptionFont),
-            ("thank you", "Thank You", "A big shout out to you for downloading this app. Hope we help you reconnect with your loved ones and bring you good memories.", "", UIColor(red:0.61, green:0.56, blue:0.74, alpha:1.00), UIColor.white, UIColor.white, titleFont,descriptionFont)
-            ][index]
-    }
-    
     //MARK: Custom Functions
     
     func viewSwiped() {
@@ -283,7 +248,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        gradient.frame = self.view.bounds
 //        
 //        self.view.layer.insertSublayer(gradient, at: 0)
-        self.view.backgroundColor = 
+        self.view.backgroundColor = UIColor.green
     }
     
     func firstStackViewTapped() {
