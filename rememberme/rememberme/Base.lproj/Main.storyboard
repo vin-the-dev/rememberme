@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-Yv-jdW"/>
-                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-qb-TSg">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-qb-TSg">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="znX-26-hHM">
@@ -85,7 +85,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leI-C3-zeR">
-                                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -133,7 +133,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5h-cd-TCe">
-                                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -181,7 +181,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4M-uS-KEb">
-                                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -329,8 +329,11 @@
                         <outlet property="imgFirstContactImage" destination="z0P-YG-uNm" id="D7g-cv-u9J"/>
                         <outlet property="imgSecondContactImage" destination="6yd-Lp-wEp" id="WiO-Ro-K5R"/>
                         <outlet property="imgThirdContactImage" destination="B4s-sZ-1gX" id="pvN-8A-TAw"/>
+                        <outlet property="lblFirstContactDetail" destination="leI-C3-zeR" id="wFn-WV-WvI"/>
                         <outlet property="lblFirstContactName" destination="GNd-ni-r8D" id="FmA-jO-PJk"/>
+                        <outlet property="lblSecondContactDetail" destination="X5h-cd-TCe" id="bzo-Ke-agH"/>
                         <outlet property="lblSecondContactName" destination="gdg-V6-GNz" id="peY-Rw-4Lf"/>
+                        <outlet property="lblThirdContactDetail" destination="e4M-uS-KEb" id="yea-C4-sON"/>
                         <outlet property="lblThirdContactName" destination="b6B-kw-J92" id="XIK-3B-cV1"/>
                         <outlet property="mainStackView" destination="znX-26-hHM" id="gz1-7h-ylH"/>
                         <outlet property="secondStackView" destination="zpy-jM-uBw" id="HYr-mh-gsh"/>
@@ -341,6 +344,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="97" y="36"/>
+        </scene>
+        <!--Permission View Controller-->
+        <scene sceneID="KuW-nI-Jay">
+            <objects>
+                <viewController storyboardIdentifier="PermissionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rc6-bu-s18" customClass="PermissionViewController" customModule="rememberme" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ArC-1p-Xx3"/>
+                        <viewControllerLayoutGuide type="bottom" id="64L-ME-0uR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9i7-Ra-iWE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="center-background" translatesAutoresizingMaskIntoConstraints="NO" id="L5c-0t-Wnn">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="fSf-id-jKW"/>
+                                    <constraint firstAttribute="width" constant="200" id="q9W-Du-hjw"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="aH4-gu-nSv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="FaK-uY-AIl"/>
+                                    <constraint firstAttribute="width" constant="45" id="eqA-0y-bpP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-Dl-o9p">
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-1h-rAM">
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button-border" translatesAutoresizingMaskIntoConstraints="NO" id="3jX-sU-ALU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="A4J-P9-CiO"/>
+                                    <constraint firstAttribute="width" constant="250" id="fCr-Ix-iYL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-xF-xtr">
+                                <connections>
+                                    <action selector="btnActionClicked:" destination="rc6-bu-s18" eventType="touchUpInside" id="7AF-Bc-pKo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWl-BG-XhA">
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.51372549019607838" green="0.34901960784313724" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3jX-sU-ALU" firstAttribute="centerX" secondItem="9i7-Ra-iWE" secondAttribute="centerX" id="0be-cO-wT3"/>
+                            <constraint firstItem="UtC-Dl-o9p" firstAttribute="width" secondItem="9i7-Ra-iWE" secondAttribute="width" constant="-30" id="1Mg-or-W1W"/>
+                            <constraint firstItem="aH4-gu-nSv" firstAttribute="centerY" secondItem="L5c-0t-Wnn" secondAttribute="centerY" id="1dX-TE-UX3"/>
+                            <constraint firstItem="L5c-0t-Wnn" firstAttribute="centerY" secondItem="9i7-Ra-iWE" secondAttribute="centerY" id="9ii-xp-gEN"/>
+                            <constraint firstItem="64L-ME-0uR" firstAttribute="top" secondItem="3jX-sU-ALU" secondAttribute="bottom" constant="20" id="AmB-4f-ZKc"/>
+                            <constraint firstItem="Woa-1h-rAM" firstAttribute="width" secondItem="UtC-Dl-o9p" secondAttribute="width" id="Eei-ef-g7E"/>
+                            <constraint firstItem="SHf-xF-xtr" firstAttribute="width" secondItem="3jX-sU-ALU" secondAttribute="width" id="FHB-tG-Hro"/>
+                            <constraint firstItem="SHf-xF-xtr" firstAttribute="centerY" secondItem="3jX-sU-ALU" secondAttribute="centerY" id="FJI-jZ-kej"/>
+                            <constraint firstItem="UtC-Dl-o9p" firstAttribute="centerX" secondItem="9i7-Ra-iWE" secondAttribute="centerX" id="GuM-f2-fIy"/>
+                            <constraint firstItem="TWl-BG-XhA" firstAttribute="centerX" secondItem="3jX-sU-ALU" secondAttribute="centerX" id="Jg1-rC-YA6"/>
+                            <constraint firstItem="L5c-0t-Wnn" firstAttribute="centerX" secondItem="9i7-Ra-iWE" secondAttribute="centerX" id="RWT-rO-V4d"/>
+                            <constraint firstItem="Woa-1h-rAM" firstAttribute="centerX" secondItem="9i7-Ra-iWE" secondAttribute="centerX" id="Sks-iZ-QcR"/>
+                            <constraint firstItem="TWl-BG-XhA" firstAttribute="centerY" secondItem="3jX-sU-ALU" secondAttribute="centerY" id="Ypp-jU-cVX"/>
+                            <constraint firstItem="SHf-xF-xtr" firstAttribute="centerX" secondItem="3jX-sU-ALU" secondAttribute="centerX" id="eFb-eq-Ova"/>
+                            <constraint firstItem="UtC-Dl-o9p" firstAttribute="top" secondItem="ArC-1p-Xx3" secondAttribute="bottom" constant="30" id="iDI-2b-ZH8"/>
+                            <constraint firstItem="Woa-1h-rAM" firstAttribute="top" secondItem="L5c-0t-Wnn" secondAttribute="bottom" constant="15" id="lXD-Mw-4bV"/>
+                            <constraint firstItem="SHf-xF-xtr" firstAttribute="height" secondItem="3jX-sU-ALU" secondAttribute="height" id="mLF-3r-11T"/>
+                            <constraint firstItem="aH4-gu-nSv" firstAttribute="centerX" secondItem="L5c-0t-Wnn" secondAttribute="centerX" id="omS-cH-qwk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgCenterImage" destination="aH4-gu-nSv" id="J7H-bm-QM2"/>
+                        <outlet property="lblButtonText" destination="TWl-BG-XhA" id="bWP-ru-3Tl"/>
+                        <outlet property="lblMainText" destination="UtC-Dl-o9p" id="CB4-BO-Dod"/>
+                        <outlet property="lblSubText" destination="Woa-1h-rAM" id="R24-bT-hL4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JSQ-uh-UOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.60000000000002" y="35.532233883058474"/>
         </scene>
         <!--New Main View Controller-->
         <scene sceneID="MeK-LK-20C">
@@ -549,14 +636,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EkZ-0C-Npk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="134"/>
+            <point key="canvasLocation" x="1450" y="114"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Contacts" width="96" height="96"/>
         <image name="Facebook" width="96" height="96"/>
         <image name="Settings" width="96" height="96"/>
         <image name="avatar-female" width="512" height="512"/>
         <image name="avatar-male" width="512" height="512"/>
+        <image name="button-border" width="225" height="50"/>
+        <image name="center-background" width="260" height="260"/>
         <image name="photo1" width="5616" height="3744"/>
     </resources>
 </document>

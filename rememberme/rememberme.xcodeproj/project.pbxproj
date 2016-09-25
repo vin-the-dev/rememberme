@@ -12,6 +12,7 @@
 		22C6468E1D96DE0D00F8168D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C6468D1D96DE0D00F8168D /* Assets.xcassets */; };
 		22C646901D97952A00F8168D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6468F1D97952A00F8168D /* OnBoardingViewController.swift */; };
 		22D87B9C1D97BF240021995D /* NewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D87B9B1D97BF240021995D /* NewMainViewController.swift */; };
+		22D87B9E1D983E630021995D /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D87B9D1D983E630021995D /* PermissionViewController.swift */; };
 		22DCA52C1D92E81800985C90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22DCA52B1D92E81800985C90 /* GoogleService-Info.plist */; };
 		22DD7ED41D6CB92500623BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD7ED31D6CB92500623BF7 /* AppDelegate.swift */; };
 		22DD7ED61D6CB92500623BF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DD7ED51D6CB92500623BF7 /* MainViewController.swift */; };
@@ -26,6 +27,7 @@
 		22C6468D1D96DE0D00F8168D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22C6468F1D97952A00F8168D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		22D87B9B1D97BF240021995D /* NewMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMainViewController.swift; sourceTree = "<group>"; };
+		22D87B9D1D983E630021995D /* PermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
 		22DCA52B1D92E81800985C90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22DD7ED01D6CB92500623BF7 /* rememberme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rememberme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DD7ED31D6CB92500623BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				22DCA52B1D92E81800985C90 /* GoogleService-Info.plist */,
 				22135B531D90092E000C4471 /* Data.swift */,
 				22C6468F1D97952A00F8168D /* OnBoardingViewController.swift */,
+				22D87B9D1D983E630021995D /* PermissionViewController.swift */,
 				22D87B9B1D97BF240021995D /* NewMainViewController.swift */,
 			);
 			path = rememberme;
@@ -239,6 +242,7 @@
 			files = (
 				22D87B9C1D97BF240021995D /* NewMainViewController.swift in Sources */,
 				22DD7ED61D6CB92500623BF7 /* MainViewController.swift in Sources */,
+				22D87B9E1D983E630021995D /* PermissionViewController.swift in Sources */,
 				22135B541D90092E000C4471 /* Data.swift in Sources */,
 				22487F281D6F55B500E3526F /* Extensions.swift in Sources */,
 				22DD7ED41D6CB92500623BF7 /* AppDelegate.swift in Sources */,

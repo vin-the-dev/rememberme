@@ -18,7 +18,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var intSelectedContacts = (first: 0, second: 0, third: 0)
     var selectedDetailContact : Data!
     
-    var boolOnBoardingShown = true
+    var boolOnBoardingShown = false
+    var boolAskContactsPermissionShown = false
     
     // MARK: IBOutlets
     
@@ -31,16 +32,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var imgFirstContactImage: UIImageView!
     @IBOutlet weak var lblFirstContactName: UILabel!
+    @IBOutlet weak var lblFirstContactDetail: UILabel!
     
     @IBOutlet weak var imgSecondContactImage: UIImageView!
     @IBOutlet weak var lblSecondContactName: UILabel!
+    @IBOutlet weak var lblSecondContactDetail: UILabel!
     
     @IBOutlet weak var imgThirdContactImage: UIImageView!
     @IBOutlet weak var lblThirdContactName: UILabel!
+    @IBOutlet weak var lblThirdContactDetail: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var btnSkip: UIButton!
     
     // Contact Details
     
@@ -49,10 +51,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view, typically from a nib.
         
         checkIfUserAccessGranted()
-        
-        fetchContacts()
-        
-        loadContacts()
         
         var swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
         swipe.direction = UISwipeGestureRecognizerDirection.right
@@ -85,6 +83,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.boolOnBoardingShown = true
             })
         }
+        
+        if !boolAskContactsPermissionShown {
+            let askContactsPermission = self.storyboard?.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
+            self.present(askContactsPermission, animated: true, completion: {
+                self.boolAskContactsPermissionShown = true
+            })
+        }
+        
+        if userAccessGranted {
+        
+            fetchContacts()
+        
+            loadContacts()
+        }
+        
         
         loadBackGroundColor()
         
@@ -191,17 +204,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     userImage = UIImage(named: "avatar-male")!
                 }
                 var name = "No Name"
+                var detail = ""
                 if contact.givenName != "" {
                     name = contact.givenName
                     if contact.middleName  != "" {
                         name += " " + contact.middleName
                     }
                     if contact.organizationName != "" {
-                        name += ", " + contact.organizationName
+                        detail = contact.organizationName
                     }
                 }
                 
-                let data = Data(name: name, image: userImage, contact: contact)
+            let data = Data(name: name, detail: detail, image: userImage, contact: contact)
                 self.dataArray?.add(data)
                 
             }
@@ -228,12 +242,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         imgFirstContactImage.image = (dataArray?[intSelectedContacts.first] as! Data).image
         lblFirstContactName.text = (dataArray?[intSelectedContacts.first] as! Data).name
+        lblFirstContactDetail.text = (dataArray?[intSelectedContacts.first] as! Data).detail
         
         imgSecondContactImage.image = (dataArray?[intSelectedContacts.second] as! Data).image
         lblSecondContactName.text = (dataArray?[intSelectedContacts.second] as! Data).name
+        lblSecondContactDetail.text = (dataArray?[intSelectedContacts.second] as! Data).detail
         
         imgThirdContactImage.image = (dataArray?[intSelectedContacts.third] as! Data).image
         lblThirdContactName.text = (dataArray?[intSelectedContacts.third] as! Data).name
+        lblThirdContactDetail.text = (dataArray?[intSelectedContacts.third] as! Data).detail
         
     }
     

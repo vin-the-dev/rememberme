@@ -13,14 +13,16 @@ import Contacts
 class Data {
     
     let name : String
+    let detail : String
     let image : UIImage
     let contact : CNContact
     
     var contactDetails : [(label: String, value: String, type: ContactDetailType, image: UIImage?)]
     
-    init(name : String, image : UIImage, contact : CNContact) {
+    init(name : String, detail: String, image : UIImage, contact : CNContact) {
         self.image = image
         self.name = name
+        self.detail = detail
         self.contact = contact
         
         contactDetails = [(label: String, value: String, type: ContactDetailType, image: UIImage?)] ()
