@@ -18,7 +18,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var intSelectedContacts = (first: 0, second: 0, third: 0)
     var selectedDetailContact : Data!
     
-    var boolOnBoardingShown = false
+    var boolOnBoardingShown = true
     
     // MARK: IBOutlets
     
@@ -37,6 +37,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var imgThirdContactImage: UIImageView!
     @IBOutlet weak var lblThirdContactName: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var btnSkip: UIButton!
@@ -88,19 +89,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         loadBackGroundColor()
         
         let borderColor = UIColor.lightGray.withAlphaComponent(0.6).cgColor
-        let borderWidth:CGFloat = 5.0
+        let borderWidth:CGFloat = 0
         
-        imgFirstContactImage.layer.cornerRadius = imgFirstContactImage.layer.frame.height / 2
+        imgFirstContactImage.layer.cornerRadius = imgFirstContactImage.layer.frame.height / 4
         imgFirstContactImage.layer.borderWidth = borderWidth
         imgFirstContactImage.layer.borderColor = borderColor
         imgFirstContactImage.clipsToBounds = true
         
-        imgSecondContactImage.layer.cornerRadius = imgSecondContactImage.layer.frame.height / 2
+        imgSecondContactImage.layer.cornerRadius = imgSecondContactImage.layer.frame.height / 4
         imgSecondContactImage.layer.borderWidth = borderWidth
         imgSecondContactImage.layer.borderColor = borderColor
         imgSecondContactImage.clipsToBounds = true
         
-        imgThirdContactImage.layer.cornerRadius = imgThirdContactImage.layer.frame.height / 2
+        imgThirdContactImage.layer.cornerRadius = imgThirdContactImage.layer.frame.height / 4
         imgThirdContactImage.layer.borderWidth = borderWidth
         imgThirdContactImage.layer.borderColor = borderColor
         imgThirdContactImage.clipsToBounds = true

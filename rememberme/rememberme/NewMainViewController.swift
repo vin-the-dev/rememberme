@@ -38,6 +38,23 @@ class NewMainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(NewMainViewController.firstStackViewTapped))
+        self.firstContactView.addGestureRecognizer(tap1)
+        
+        self.tableView.isHidden = true
+        self.tableView.separatorColor = UIColor.clear
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        secondContactView.isHidden = true
+        thirdContactView.isHidden = true
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,5 +72,18 @@ class NewMainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: Custom functions
+    func firstStackViewTapped() {
+        _ = secondContactView.isHidden.toggle()
+        _ = thirdContactView.isHidden.toggle()
+        
+        tableView.isHidden = !secondContactView.isHidden
+        
+//        loadContactDetails()
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
 }
