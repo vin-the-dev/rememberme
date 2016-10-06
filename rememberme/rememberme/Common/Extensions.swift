@@ -43,3 +43,31 @@ extension Bool {
         return self
     }
 }
+
+extension UILabel {
+    public func setText(_ text: String?, animated: Bool, duration: TimeInterval?) {
+        if animated {
+            UIView.transition(with: self, duration: duration ?? 0.3, options: .transitionCrossDissolve, animations: { () -> Void in
+                self.text = text
+                }, completion: nil)
+        } else {
+            self.text = text
+        }
+        
+    }
+}
+
+extension UIImageView {
+    public func setImage(_ image: UIImage?, animated: Bool, duration: TimeInterval?) {
+        if animated {
+            UIView.transition(with: self, duration: duration ?? 0.3, options: .transitionCrossDissolve, animations: { () -> Void in
+                self.image = image
+                }, completion: nil)
+        } else {
+            self.image = image
+        }
+        
+    }
+}
+
+

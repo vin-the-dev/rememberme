@@ -77,19 +77,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if !boolOnBoardingShown {
-            let onBoarding = self.storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
-            self.present(onBoarding, animated: true, completion: {
-                self.boolOnBoardingShown = true
-            })
-        }
-        
-        if !boolAskContactsPermissionShown {
-            let askContactsPermission = self.storyboard?.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
-            self.present(askContactsPermission, animated: true, completion: {
-                self.boolAskContactsPermissionShown = true
-            })
-        }
+//        if !boolOnBoardingShown {
+//            let onBoarding = self.storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+//            self.present(onBoarding, animated: true, completion: {
+//                self.boolOnBoardingShown = true
+//            })
+//        }
+//        
+//        if !boolAskContactsPermissionShown {
+//            let askContactsPermission = self.storyboard?.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
+//            self.present(askContactsPermission, animated: true, completion: {
+//                self.boolAskContactsPermissionShown = true
+//            })
+//        }
         
         if userAccessGranted {
         
@@ -124,6 +124,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if event?.subtype == UIEventSubtype.motionShake {
+            loadContacts()
+        }
     }
     
     // MARK: Table View Functions
@@ -204,7 +210,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     userImage = UIImage(named: "avatar-male")!
                 }
                 var name = "No Name"
-                var detail = ""
+                var detail = " "
                 if contact.givenName != "" {
                     name = contact.givenName
                     if contact.middleName  != "" {
@@ -240,17 +246,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func loadContacts(){
         intSelectedContacts = (Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ))
         
-        imgFirstContactImage.image = (dataArray?[intSelectedContacts.first] as! Data).image
-        lblFirstContactName.text = (dataArray?[intSelectedContacts.first] as! Data).name
-        lblFirstContactDetail.text = (dataArray?[intSelectedContacts.first] as! Data).detail
+//        imgFirstContactImage.image = (dataArray?[intSelectedContacts.first] as! Data).image
+        imgFirstContactImage.setImage((dataArray?[intSelectedContacts.first] as! Data).image, animated: true, duration: commonAnimationTime)
+        lblFirstContactName.setText((dataArray?[intSelectedContacts.first] as! Data).name, animated: true, duration: commonAnimationTime)
+        lblFirstContactDetail.setText((dataArray?[intSelectedContacts.first] as! Data).detail, animated: true, duration: commonAnimationTime)
         
-        imgSecondContactImage.image = (dataArray?[intSelectedContacts.second] as! Data).image
-        lblSecondContactName.text = (dataArray?[intSelectedContacts.second] as! Data).name
-        lblSecondContactDetail.text = (dataArray?[intSelectedContacts.second] as! Data).detail
+        imgSecondContactImage.setImage((dataArray?[intSelectedContacts.second] as! Data).image, animated: true, duration: commonAnimationTime)
+        lblSecondContactName.setText((dataArray?[intSelectedContacts.second] as! Data).name, animated: true, duration: commonAnimationTime)
+        lblSecondContactDetail.setText((dataArray?[intSelectedContacts.second] as! Data).detail, animated: true, duration: commonAnimationTime)
         
-        imgThirdContactImage.image = (dataArray?[intSelectedContacts.third] as! Data).image
-        lblThirdContactName.text = (dataArray?[intSelectedContacts.third] as! Data).name
-        lblThirdContactDetail.text = (dataArray?[intSelectedContacts.third] as! Data).detail
+        imgThirdContactImage.setImage((dataArray?[intSelectedContacts.third] as! Data).image, animated: true, duration: commonAnimationTime)
+        lblThirdContactName.setText((dataArray?[intSelectedContacts.third] as! Data).name, animated: true, duration: commonAnimationTime)
+        lblThirdContactDetail.setText((dataArray?[intSelectedContacts.third] as! Data).detail, animated: true, duration: commonAnimationTime) 
         
     }
     

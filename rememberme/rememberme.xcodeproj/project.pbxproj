@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		22135B541D90092E000C4471 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22135B531D90092E000C4471 /* Data.swift */; };
 		22487F281D6F55B500E3526F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22487F271D6F55B500E3526F /* Extensions.swift */; };
+		225473F41DA5882700EF72D0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225473F31DA5882700EF72D0 /* AppConstants.swift */; };
 		22C6468E1D96DE0D00F8168D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C6468D1D96DE0D00F8168D /* Assets.xcassets */; };
 		22C646901D97952A00F8168D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6468F1D97952A00F8168D /* OnBoardingViewController.swift */; };
 		22D87B9C1D97BF240021995D /* NewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D87B9B1D97BF240021995D /* NewMainViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		22135B531D90092E000C4471 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		22487F271D6F55B500E3526F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Common/Extensions.swift; sourceTree = "<group>"; };
+		225473F31DA5882700EF72D0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = Common/AppConstants.swift; sourceTree = "<group>"; };
 		22C6468D1D96DE0D00F8168D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22C6468F1D97952A00F8168D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		22D87B9B1D97BF240021995D /* NewMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMainViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				22487F271D6F55B500E3526F /* Extensions.swift */,
+				225473F31DA5882700EF72D0 /* AppConstants.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				22D87B9C1D97BF240021995D /* NewMainViewController.swift in Sources */,
 				22DD7ED61D6CB92500623BF7 /* MainViewController.swift in Sources */,
 				22D87B9E1D983E630021995D /* PermissionViewController.swift in Sources */,
+				225473F41DA5882700EF72D0 /* AppConstants.swift in Sources */,
 				22135B541D90092E000C4471 /* Data.swift in Sources */,
 				22487F281D6F55B500E3526F /* Extensions.swift in Sources */,
 				22DD7ED41D6CB92500623BF7 /* AppDelegate.swift in Sources */,
