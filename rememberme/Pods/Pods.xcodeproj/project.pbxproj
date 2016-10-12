@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0660CF37B5A025C8D9C2EC390822B719 /* PageViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92507DC3B22E809B528B8B000AC0D4D /* PageViewItem.swift */; };
-		1019AE24E6CB9E2944B66CD8BD6A656F /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289CB745671D52453E3C5FAFF6243973 /* OnboardingContentView.swift */; };
-		116F24A23B8EB7BB3DBE23663C359AB0 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500C1E2B2EE3BC6B107AE5B833AAA7C /* PageView.swift */; };
-		1B571BE9E7A126CA8156B854C7F9E4C3 /* OnboardingContantViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09CBD6BE2A769AE911F0C9BA49F15CF /* OnboardingContantViewItem.swift */; };
+		0660CF37B5A025C8D9C2EC390822B719 /* PageViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72DBEC5ADE23BAC4845DD01686AE61 /* PageViewItem.swift */; };
+		1019AE24E6CB9E2944B66CD8BD6A656F /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D01450EECAEF4A075EA366977EF19 /* OnboardingContentView.swift */; };
+		116F24A23B8EB7BB3DBE23663C359AB0 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC1BE9C966213D7F3ED64DA739CBD93 /* PageView.swift */; };
+		1B571BE9E7A126CA8156B854C7F9E4C3 /* OnboardingContantViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B71CF91F36C0B73A1603F72506D3A1 /* OnboardingContantViewItem.swift */; };
 		270F531FB41C7AF0885120DB266CF4C5 /* Pods-rememberme-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2C7C5FF5A26B148862CC3CAB3AD5E6 /* Pods-rememberme-dummy.m */; };
 		2C98D080A3BA2F2FFBA546E8AE255F16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		3EC54D1B9762D2B857B348A50B805241 /* paper-onboarding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 894CDAEDE0757976CDA765F8B78B6599 /* paper-onboarding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B89FF5FA110C40F00337A2C094F1D26 /* PaperOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F831F5FB963D19BD6C04894A2192A /* PaperOnboarding.swift */; };
+		3EC54D1B9762D2B857B348A50B805241 /* paper-onboarding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8134FF8B2850B2D136F5873011FDBAAE /* paper-onboarding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B89FF5FA110C40F00337A2C094F1D26 /* PaperOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407480E7322F3C376AD77AA51568557E /* PaperOnboarding.swift */; };
 		4D49FD9023CEB791837D48BA44808785 /* Pods-rememberme-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 77E1604D91C39BB3B3EE8D60B1E8885C /* Pods-rememberme-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8CB21C7C4093233B97FE6343CA2B2322 /* Configuring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E54B46B240A1588EDFCC1F9D39A7C4 /* Configuring.swift */; };
-		9F69C606950F8223EF00E5AB34D5AB2A /* ConstraintsHalper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60DA6467180B80F990D335CB2D7FFF1 /* ConstraintsHalper.swift */; };
-		B3142C2C3568DBCD00088A8728C57FFE /* paper-onboarding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D27EBAF1551A0028795D5FB46C09E269 /* paper-onboarding-dummy.m */; };
-		CCFD6DD4E53D961B5B060D6F1F5D72B9 /* GestureControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD946DA98A7546B1F704A4E40B63 /* GestureControl.swift */; };
+		8CB21C7C4093233B97FE6343CA2B2322 /* Configuring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D29B99CA298FE7373FB6F2661D6705 /* Configuring.swift */; };
+		9F69C606950F8223EF00E5AB34D5AB2A /* ConstraintsHalper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E524E2ACF37767684032DF8FAEF0DDF3 /* ConstraintsHalper.swift */; };
+		B3142C2C3568DBCD00088A8728C57FFE /* paper-onboarding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE97F0B44D3D66D659AA7AA5EBB4F63 /* paper-onboarding-dummy.m */; };
+		CCFD6DD4E53D961B5B060D6F1F5D72B9 /* GestureControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765183246B0013DCC20DCB6EDEBABB3 /* GestureControl.swift */; };
 		DA7E72AEFC2E7F1DA21A3E291DEE6A0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		DC3DF67D1ABDCEEC91616269F8CAC218 /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07E015B3AA8317AF35BAC6BD8D8AB0 /* PageContainer.swift */; };
-		FE8B7BF8506FBC12EE6000217DA78CCE /* FillAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCF460E8AE80DD7C7900AA42CAE51D7 /* FillAnimationView.swift */; };
+		DC3DF67D1ABDCEEC91616269F8CAC218 /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA084BC36A373CDCB8E60CCED93A8475 /* PageContainer.swift */; };
+		FE8B7BF8506FBC12EE6000217DA78CCE /* FillAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EECD6EB537B402AA7E5E4D00D6D798 /* FillAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,46 +36,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012E8AD7A1F09B96A65D22C5B178DAB6 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		07EECD6EB537B402AA7E5E4D00D6D798 /* FillAnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillAnimationView.swift; path = Source/FillAnimatinView/FillAnimationView.swift; sourceTree = "<group>"; };
 		086A9B1915CEF13C570FEE7DDCC49887 /* Pods-rememberme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rememberme.release.xcconfig"; sourceTree = "<group>"; };
-		09D50BD1BC463649279AB3E1E82DC7C7 /* paper-onboarding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "paper-onboarding.xcconfig"; sourceTree = "<group>"; };
 		12E15012F8C1F695AC6E7F75D0C16489 /* Pods-rememberme-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-rememberme-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1AD97A9185B43D1F442EE4EEB66FD424 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		289CB745671D52453E3C5FAFF6243973 /* OnboardingContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingContentView.swift; path = Source/OnboardingContantView/OnboardingContentView.swift; sourceTree = "<group>"; };
-		28DDC5D56F3980986A897B69AB164514 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		30016AD7BA7B9031CBAA0C2CFFB2AAAF /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
+		1A7921269673DFD387D5C3B5E5116083 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		1AB835FDB836EBE85761919E6C4CFB46 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		30B71CF91F36C0B73A1603F72506D3A1 /* OnboardingContantViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingContantViewItem.swift; path = Source/OnboardingContantView/Item/OnboardingContantViewItem.swift; sourceTree = "<group>"; };
 		31FDBFB7CA0AE684A43F9F308CA5299F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		327D01450EECAEF4A075EA366977EF19 /* OnboardingContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingContentView.swift; path = Source/OnboardingContantView/OnboardingContentView.swift; sourceTree = "<group>"; };
 		3D2C7C5FF5A26B148862CC3CAB3AD5E6 /* Pods-rememberme-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-rememberme-dummy.m"; sourceTree = "<group>"; };
-		4982349E8F1CCF95468AB0C672EABA4B /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		4FCF460E8AE80DD7C7900AA42CAE51D7 /* FillAnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FillAnimationView.swift; path = Source/FillAnimatinView/FillAnimationView.swift; sourceTree = "<group>"; };
+		407480E7322F3C376AD77AA51568557E /* PaperOnboarding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaperOnboarding.swift; path = Source/PaperOnboarding.swift; sourceTree = "<group>"; };
+		4EB931C668279C84EC9A2100EE2D932D /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		4F72DBEC5ADE23BAC4845DD01686AE61 /* PageViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewItem.swift; path = Source/PageView/Item/PageViewItem.swift; sourceTree = "<group>"; };
 		50612EFB58CE7915A23D00338533FEBA /* paper_onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = paper_onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62AB943886221A1DA82EAF5A4B39578F /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
-		63C5AD946DA98A7546B1F704A4E40B63 /* GestureControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GestureControl.swift; path = Source/GestureControl/GestureControl.swift; sourceTree = "<group>"; };
-		6500C1E2B2EE3BC6B107AE5B833AAA7C /* PageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Source/PageView/PageView.swift; sourceTree = "<group>"; };
-		666D0CC385929D276A46CB3EB632BB5A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B9368FB62C45AFC9C6696B3984C480 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		58D29B99CA298FE7373FB6F2661D6705 /* Configuring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuring.swift; path = Source/Helpers/Configuring.swift; sourceTree = "<group>"; };
+		5C6580AAF19F13E2DC543660D79D51DF /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		61A3C46E1408AF2711A8A602AC00B06E /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		6BDA1F876825C6DE8E8FE61D1E187CE2 /* paper-onboarding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "paper-onboarding-prefix.pch"; sourceTree = "<group>"; };
 		70D5FC83B47568F16EFC6C2B5E196947 /* Pods-rememberme-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-rememberme-acknowledgements.plist"; sourceTree = "<group>"; };
 		7316AF9F460EECED20E8EAF460F13A5A /* Pods-rememberme.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-rememberme.modulemap"; sourceTree = "<group>"; };
-		77CA4570465D8948493A4AF7299A73E1 /* GoogleParsingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleParsingUtilities.framework; path = Frameworks/frameworks/GoogleParsingUtilities.framework; sourceTree = "<group>"; };
 		77E1604D91C39BB3B3EE8D60B1E8885C /* Pods-rememberme-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-rememberme-umbrella.h"; sourceTree = "<group>"; };
-		7FB1EC37694090A387C2860D10ECCEE5 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		894CDAEDE0757976CDA765F8B78B6599 /* paper-onboarding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "paper-onboarding-umbrella.h"; sourceTree = "<group>"; };
+		8134FF8B2850B2D136F5873011FDBAAE /* paper-onboarding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "paper-onboarding-umbrella.h"; sourceTree = "<group>"; };
+		8FC1BE9C966213D7F3ED64DA739CBD93 /* PageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Source/PageView/PageView.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		946F831F5FB963D19BD6C04894A2192A /* PaperOnboarding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaperOnboarding.swift; path = Source/PaperOnboarding.swift; sourceTree = "<group>"; };
-		954D16C875E34C58180C703307FFC64A /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		99C8E994E257EC72D8C928E3CB37D369 /* Pods_rememberme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rememberme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A09CBD6BE2A769AE911F0C9BA49F15CF /* OnboardingContantViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingContantViewItem.swift; path = Source/OnboardingContantView/Item/OnboardingContantViewItem.swift; sourceTree = "<group>"; };
+		AEE97F0B44D3D66D659AA7AA5EBB4F63 /* paper-onboarding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "paper-onboarding-dummy.m"; sourceTree = "<group>"; };
+		AF785AD37EBF74F70F116946675D2197 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
 		AFB660515D29DC4679244F2A4EE1A1DD /* Pods-rememberme-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rememberme-resources.sh"; sourceTree = "<group>"; };
-		B60DA6467180B80F990D335CB2D7FFF1 /* ConstraintsHalper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintsHalper.swift; path = Source/Helpers/ConstraintsHalper.swift; sourceTree = "<group>"; };
-		B92507DC3B22E809B528B8B000AC0D4D /* PageViewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewItem.swift; path = Source/PageView/Item/PageViewItem.swift; sourceTree = "<group>"; };
-		BE0752DCCD4548D2232051F2CCE1531A /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
-		BE07E015B3AA8317AF35BAC6BD8D8AB0 /* PageContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageContainer.swift; path = Source/PageView/PageContainerView/PageContainer.swift; sourceTree = "<group>"; };
-		C439F978046B807BE5CF79390C096F2F /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		BFFD43427AC01E9B78B27B58FBD4BE2C /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		C9C3DADB47D991F2C2B41E4A4DCC1B02 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D0E54B46B240A1588EDFCC1F9D39A7C4 /* Configuring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuring.swift; path = Source/Helpers/Configuring.swift; sourceTree = "<group>"; };
-		D27EBAF1551A0028795D5FB46C09E269 /* paper-onboarding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "paper-onboarding-dummy.m"; sourceTree = "<group>"; };
 		DD59E9B3D9306DE581A2568FA5D8AD91 /* Pods-rememberme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rememberme.debug.xcconfig"; sourceTree = "<group>"; };
-		E9B7BEF4E86C22D7A7B7B8C98F900E7D /* paper-onboarding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "paper-onboarding-prefix.pch"; sourceTree = "<group>"; };
+		E1B5C1C91D1D60B0AAAFC0D840DC9465 /* paper-onboarding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "paper-onboarding.xcconfig"; sourceTree = "<group>"; };
+		E23BD829261B0B747099544C68227165 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2C21B5DC87532F6F58F8930C5A435E4 /* paper-onboarding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "paper-onboarding.modulemap"; sourceTree = "<group>"; };
+		E524E2ACF37767684032DF8FAEF0DDF3 /* ConstraintsHalper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintsHalper.swift; path = Source/Helpers/ConstraintsHalper.swift; sourceTree = "<group>"; };
+		E765183246B0013DCC20DCB6EDEBABB3 /* GestureControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GestureControl.swift; path = Source/GestureControl/GestureControl.swift; sourceTree = "<group>"; };
 		F32D81016631D96B58895D71D4BE195F /* Pods-rememberme-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rememberme-frameworks.sh"; sourceTree = "<group>"; };
-		F815B3E9E6FB37CB5429652760383D8B /* paper-onboarding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "paper-onboarding.modulemap"; sourceTree = "<group>"; };
+		FA084BC36A373CDCB8E60CCED93A8475 /* PageContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageContainer.swift; path = Source/PageView/PageContainerView/PageContainer.swift; sourceTree = "<group>"; };
+		FC6831BC19D9F42C4956E6C2D4668E06 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,69 +99,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0534AB5F84A82102D022E9AEFF037EFB /* Frameworks */ = {
+		0AC706DD2DDE5BBF003655EC9AD4EDA6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C439F978046B807BE5CF79390C096F2F /* FirebaseAuth.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0A05357799BA8062DD04713D69ED644C /* FirebaseAuth */ = {
-			isa = PBXGroup;
-			children = (
-				0534AB5F84A82102D022E9AEFF037EFB /* Frameworks */,
-			);
-			path = FirebaseAuth;
-			sourceTree = "<group>";
-		};
-		0E862E555958B97777A2057833898AAF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4982349E8F1CCF95468AB0C672EABA4B /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1A632B547021E80AF051EB64FC771B3B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1C0C14EEF0C1547F1F8FA35590897A37 /* Firebase */,
-				E3BF2FC30F9386C85804E96C61F14EF7 /* FirebaseAnalytics */,
-				0A05357799BA8062DD04713D69ED644C /* FirebaseAuth */,
-				4E20BBF5C2DDEB4FF3D5751B814EFED9 /* FirebaseInstanceID */,
-				71D07AD09DEAB94474EDC30A983A288B /* GoogleInterchangeUtilities */,
-				A962E5457C67C997FC06D7851F5E0119 /* GoogleNetworkingUtilities */,
-				1FB09E8186F532314969596045A52FE1 /* GoogleParsingUtilities */,
-				A774E078AF147F4B6D6001713590D046 /* GoogleSymbolUtilities */,
-				330C0231AB7D57CE14C575D61C1E7F0B /* GoogleUtilities */,
-				66945745034649EB737962708012A898 /* paper-onboarding */,
+				3643670172BC38F0CFF6F050C2360310 /* Firebase */,
+				83043B28D79F0AEDADE800FC3220AF09 /* FirebaseAnalytics */,
+				D3E5C41E7BA8473C28312918D505CFCF /* FirebaseAuth */,
+				F8D38424A553D60E904CC8AE6B43774E /* FirebaseCore */,
+				7A866A11553B1C531FC8E3AFAEC81B59 /* FirebaseDatabase */,
+				3B879E84C99DFC083A53C65967AFB061 /* FirebaseInstanceID */,
+				573EB52DA235DD0570D3CA9DCB617A1E /* GoogleInterchangeUtilities */,
+				87001778E5029B3CFC3FC13FD5E237ED /* GoogleNetworkingUtilities */,
+				2CB4312025372E3C1C70E6B036F1CCC5 /* GoogleSymbolUtilities */,
+				DA58EF523F026787D7302EBD51EB2EE9 /* GoogleUtilities */,
+				10566BC398E728F8A189FE1A64A9E854 /* paper-onboarding */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		1C0C14EEF0C1547F1F8FA35590897A37 /* Firebase */ = {
+		10566BC398E728F8A189FE1A64A9E854 /* paper-onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				D54FE27BE852A616BD34F70A2A38AD88 /* Analytics */,
+				58D29B99CA298FE7373FB6F2661D6705 /* Configuring.swift */,
+				E524E2ACF37767684032DF8FAEF0DDF3 /* ConstraintsHalper.swift */,
+				07EECD6EB537B402AA7E5E4D00D6D798 /* FillAnimationView.swift */,
+				E765183246B0013DCC20DCB6EDEBABB3 /* GestureControl.swift */,
+				30B71CF91F36C0B73A1603F72506D3A1 /* OnboardingContantViewItem.swift */,
+				327D01450EECAEF4A075EA366977EF19 /* OnboardingContentView.swift */,
+				FA084BC36A373CDCB8E60CCED93A8475 /* PageContainer.swift */,
+				8FC1BE9C966213D7F3ED64DA739CBD93 /* PageView.swift */,
+				4F72DBEC5ADE23BAC4845DD01686AE61 /* PageViewItem.swift */,
+				407480E7322F3C376AD77AA51568557E /* PaperOnboarding.swift */,
+				DCBF38CA8319BE021421EE73AFE35313 /* Support Files */,
+			);
+			path = "paper-onboarding";
+			sourceTree = "<group>";
+		};
+		14FBAAD97FD7F291B7ADA2B598AFAC22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF785AD37EBF74F70F116946675D2197 /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CB4312025372E3C1C70E6B036F1CCC5 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D2A5CAE04B8B3CC9F53A555EA4AC449 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		3643670172BC38F0CFF6F050C2360310 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				AD18797940B37F595E3CC7E5D6B67541 /* Core */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		1FB09E8186F532314969596045A52FE1 /* GoogleParsingUtilities */ = {
+		3B879E84C99DFC083A53C65967AFB061 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				A6CC266D47685F988352349054C130E9 /* Frameworks */,
+				BFFD43427AC01E9B78B27B58FBD4BE2C /* FIRInstanceID.h */,
+				3F25B1C9AF03303BE7932849C28E67A7 /* Frameworks */,
 			);
-			path = GoogleParsingUtilities;
-			sourceTree = "<group>";
-		};
-		330C0231AB7D57CE14C575D61C1E7F0B /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				7686F5D41D93FF27297139FDF0E98D64 /* Frameworks */,
-			);
-			path = GoogleUtilities;
+			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -171,13 +176,28 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		4E20BBF5C2DDEB4FF3D5751B814EFED9 /* FirebaseInstanceID */ = {
+		3F25B1C9AF03303BE7932849C28E67A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				62AB943886221A1DA82EAF5A4B39578F /* FIRInstanceID.h */,
-				0E862E555958B97777A2057833898AAF /* Frameworks */,
+				012E8AD7A1F09B96A65D22C5B178DAB6 /* FirebaseInstanceID.framework */,
 			);
-			path = FirebaseInstanceID;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D2A5CAE04B8B3CC9F53A555EA4AC449 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C6580AAF19F13E2DC543660D79D51DF /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		573EB52DA235DD0570D3CA9DCB617A1E /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				14FBAAD97FD7F291B7ADA2B598AFAC22 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
 			sourceTree = "<group>";
 		};
 		5C7775DFB2DBF2BC2899512F5F9380F8 /* Products */ = {
@@ -197,60 +217,20 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		61A601BB8B154A3B2D05F24F674784C6 /* Frameworks */ = {
+		6DD92DB9A23FE2ACA67B5EDC72777D3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				954D16C875E34C58180C703307FFC64A /* FirebaseAnalytics.framework */,
+				61A3C46E1408AF2711A8A602AC00B06E /* FirebaseAuth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		66945745034649EB737962708012A898 /* paper-onboarding */ = {
+		7A866A11553B1C531FC8E3AFAEC81B59 /* FirebaseDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				D0E54B46B240A1588EDFCC1F9D39A7C4 /* Configuring.swift */,
-				B60DA6467180B80F990D335CB2D7FFF1 /* ConstraintsHalper.swift */,
-				4FCF460E8AE80DD7C7900AA42CAE51D7 /* FillAnimationView.swift */,
-				63C5AD946DA98A7546B1F704A4E40B63 /* GestureControl.swift */,
-				A09CBD6BE2A769AE911F0C9BA49F15CF /* OnboardingContantViewItem.swift */,
-				289CB745671D52453E3C5FAFF6243973 /* OnboardingContentView.swift */,
-				BE07E015B3AA8317AF35BAC6BD8D8AB0 /* PageContainer.swift */,
-				6500C1E2B2EE3BC6B107AE5B833AAA7C /* PageView.swift */,
-				B92507DC3B22E809B528B8B000AC0D4D /* PageViewItem.swift */,
-				946F831F5FB963D19BD6C04894A2192A /* PaperOnboarding.swift */,
-				70334FDBE9D64069C708F9477F90089C /* Support Files */,
+				F8A7879DB6484C844FFEF30C45B3F23F /* Frameworks */,
 			);
-			path = "paper-onboarding";
-			sourceTree = "<group>";
-		};
-		70334FDBE9D64069C708F9477F90089C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				666D0CC385929D276A46CB3EB632BB5A /* Info.plist */,
-				F815B3E9E6FB37CB5429652760383D8B /* paper-onboarding.modulemap */,
-				09D50BD1BC463649279AB3E1E82DC7C7 /* paper-onboarding.xcconfig */,
-				D27EBAF1551A0028795D5FB46C09E269 /* paper-onboarding-dummy.m */,
-				E9B7BEF4E86C22D7A7B7B8C98F900E7D /* paper-onboarding-prefix.pch */,
-				894CDAEDE0757976CDA765F8B78B6599 /* paper-onboarding-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/paper-onboarding";
-			sourceTree = "<group>";
-		};
-		71D07AD09DEAB94474EDC30A983A288B /* GoogleInterchangeUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				D7304D1F1E04AA3AAF892DB0906BAD22 /* Frameworks */,
-			);
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		7686F5D41D93FF27297139FDF0E98D64 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7FB1EC37694090A387C2860D10ECCEE5 /* GoogleUtilities.framework */,
-			);
-			name = Frameworks;
+			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -258,34 +238,42 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				1A632B547021E80AF051EB64FC771B3B /* Pods */,
+				0AC706DD2DDE5BBF003655EC9AD4EDA6 /* Pods */,
 				5C7775DFB2DBF2BC2899512F5F9380F8 /* Products */,
 				5F40204CB093A0721C952EE43B14A797 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A6CC266D47685F988352349054C130E9 /* Frameworks */ = {
+		7F7A697D751CC697F528A895E8123A0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				77CA4570465D8948493A4AF7299A73E1 /* GoogleParsingUtilities.framework */,
+				1AB835FDB836EBE85761919E6C4CFB46 /* GoogleUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A774E078AF147F4B6D6001713590D046 /* GoogleSymbolUtilities */ = {
+		83043B28D79F0AEDADE800FC3220AF09 /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				EC2AB738B2CAC62F4A371ECBC86A9FBD /* Frameworks */,
+				E03D5E5F58183244AFA0608EABA6DE29 /* Frameworks */,
 			);
-			path = GoogleSymbolUtilities;
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		A962E5457C67C997FC06D7851F5E0119 /* GoogleNetworkingUtilities */ = {
+		87001778E5029B3CFC3FC13FD5E237ED /* GoogleNetworkingUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				C7748F15F8CC1233D0679EF6C6BD4333 /* Frameworks */,
+				F796330DE46CE15C1C61167FAAE49260 /* Frameworks */,
 			);
 			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		AD18797940B37F595E3CC7E5D6B67541 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FC6831BC19D9F42C4956E6C2D4668E06 /* Firebase.h */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -296,28 +284,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C7748F15F8CC1233D0679EF6C6BD4333 /* Frameworks */ = {
+		C4EBB5137A6C3227C9F530D2CC9DA862 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE0752DCCD4548D2232051F2CCE1531A /* GoogleNetworkingUtilities.framework */,
+				55B9368FB62C45AFC9C6696B3984C480 /* FirebaseCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D54FE27BE852A616BD34F70A2A38AD88 /* Analytics */ = {
+		D3E5C41E7BA8473C28312918D505CFCF /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
-				30016AD7BA7B9031CBAA0C2CFFB2AAAF /* Firebase.h */,
+				6DD92DB9A23FE2ACA67B5EDC72777D3B /* Frameworks */,
 			);
-			name = Analytics;
+			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
-		D7304D1F1E04AA3AAF892DB0906BAD22 /* Frameworks */ = {
+		DA58EF523F026787D7302EBD51EB2EE9 /* GoogleUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				1AD97A9185B43D1F442EE4EEB66FD424 /* GoogleInterchangeUtilities.framework */,
+				7F7A697D751CC697F528A895E8123A0E /* Frameworks */,
 			);
-			name = Frameworks;
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		DCBF38CA8319BE021421EE73AFE35313 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E23BD829261B0B747099544C68227165 /* Info.plist */,
+				E2C21B5DC87532F6F58F8930C5A435E4 /* paper-onboarding.modulemap */,
+				E1B5C1C91D1D60B0AAAFC0D840DC9465 /* paper-onboarding.xcconfig */,
+				AEE97F0B44D3D66D659AA7AA5EBB4F63 /* paper-onboarding-dummy.m */,
+				6BDA1F876825C6DE8E8FE61D1E187CE2 /* paper-onboarding-prefix.pch */,
+				8134FF8B2850B2D136F5873011FDBAAE /* paper-onboarding-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/paper-onboarding";
 			sourceTree = "<group>";
 		};
 		DFD8B9C63EABCABB733A7B874F54D557 /* Pods-rememberme */ = {
@@ -338,20 +340,36 @@
 			path = "Target Support Files/Pods-rememberme";
 			sourceTree = "<group>";
 		};
-		E3BF2FC30F9386C85804E96C61F14EF7 /* FirebaseAnalytics */ = {
+		E03D5E5F58183244AFA0608EABA6DE29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				61A601BB8B154A3B2D05F24F674784C6 /* Frameworks */,
-			);
-			path = FirebaseAnalytics;
-			sourceTree = "<group>";
-		};
-		EC2AB738B2CAC62F4A371ECBC86A9FBD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				28DDC5D56F3980986A897B69AB164514 /* GoogleSymbolUtilities.framework */,
+				1A7921269673DFD387D5C3B5E5116083 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F796330DE46CE15C1C61167FAAE49260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9C3DADB47D991F2C2B41E4A4DCC1B02 /* GoogleNetworkingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8A7879DB6484C844FFEF30C45B3F23F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EB931C668279C84EC9A2100EE2D932D /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8D38424A553D60E904CC8AE6B43774E /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBB5137A6C3227C9F530D2CC9DA862 /* Frameworks */,
+			);
+			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,7 +612,7 @@
 		};
 		B2502D376072EF3856FF61955D350771 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09D50BD1BC463649279AB3E1E82DC7C7 /* paper-onboarding.xcconfig */;
+			baseConfigurationReference = E1B5C1C91D1D60B0AAAFC0D840DC9465 /* paper-onboarding.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -627,7 +645,7 @@
 		};
 		B2EB9810CE70165467A7A5EDA2009156 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09D50BD1BC463649279AB3E1E82DC7C7 /* paper-onboarding.xcconfig */;
+			baseConfigurationReference = E1B5C1C91D1D60B0AAAFC0D840DC9465 /* paper-onboarding.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

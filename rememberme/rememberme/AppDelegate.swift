@@ -16,13 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     var contactStore = CNContactStore()
-
-    private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        FIRApp.configure()
-        
-        return true
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         FIRApp.configure()
@@ -98,6 +91,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         presentedViewController.present(alertController, animated: true, completion: nil)
     }
+    
+    
     
 
 }
