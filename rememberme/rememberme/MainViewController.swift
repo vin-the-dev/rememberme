@@ -8,6 +8,7 @@
 
 import UIKit
 import Contacts
+import FirebaseAuth
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -118,6 +119,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         imgThirdContactImage.layer.borderWidth = borderWidth
         imgThirdContactImage.layer.borderColor = borderColor
         imgThirdContactImage.clipsToBounds = true
+        
+        authUser()
 
     }
     
@@ -329,6 +332,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         tableView.reloadData()
+    }
+    
+    func authUser(){
+        if FIRAuth.auth()?.currentUser == nil{
+            FIRAuth.auth()?.signInAnonymously() { (user, error) in
+            }
+        }
     }
     
 }
