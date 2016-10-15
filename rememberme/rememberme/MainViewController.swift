@@ -19,9 +19,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var intSelectedContacts = (first: 0, second: 0, third: 0)
     var selectedDetailContact : Data!
     
-    var boolOnBoardingShown = false
-    var boolAskContactsPermissionShown = false
-    
     // MARK: IBOutlets
     
     @IBOutlet weak var mainStackView: UIStackView!
@@ -51,8 +48,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        checkIfUserAccessGranted()
-        
         var swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
         swipe.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipe)
@@ -77,20 +72,24 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let Defaults = UserDefaults.standard
         
-//        if !boolOnBoardingShown {
-//            let onBoarding = self.storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
-//            self.present(onBoarding, animated: true, completion: {
-//                self.boolOnBoardingShown = true
-//            })
-//        }
-//        
-//        if !boolAskContactsPermissionShown {
-//            let askContactsPermission = self.storyboard?.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
-//            self.present(askContactsPermission, animated: true, completion: {
-//                self.boolAskContactsPermissionShown = true
-//            })
-//        }
+        if Defaults["boolOnBoardingShown"] == nil {
+            let onBoarding = self.storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+            self.present(onBoarding, animated: true, completion: {
+                Defaults["boolOnBoardingShown"] = "Y" as AnyObject?
+            })
+        }
+        
+        if Defaults["boolAskContactsPermissionShown"] == nil {
+            let askContactsPermission = self.storyboard?.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
+            self.present(askContactsPermission, animated: true, completion: {
+                Defaults["boolAskContactsPermissionShown"] = "Y" as AnyObject?
+            })
+        }
+        else{
+            self.checkIfUserAccessGranted()
+        }
         
         if userAccessGranted {
         
@@ -166,9 +165,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             
             let email = selectedDetailContact.contactDetails[indexPath.row].value
-            let subject = "Remember me?".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let subject = mailSubject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             
-            let body = "Remembering your through this amazing app Remember me?".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            let body = mailBody.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
             let url = URL(string: "mailto:\(email)?subject=\(subject!)&body=\(body!)")
             UIApplication.shared.openURL(url!)
             

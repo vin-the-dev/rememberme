@@ -70,4 +70,14 @@ extension UIImageView {
     }
 }
 
+extension UserDefaults {
+    public subscript(key: String) -> AnyObject? {
+        get {
+            return object(forKey: key) as AnyObject?
+        }
+        set {
+            set(newValue, forKey: key)
+        }
+    }
+}
 

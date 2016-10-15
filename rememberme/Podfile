@@ -9,6 +9,7 @@ target 'rememberme' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Messaging'
   pod 'paper-onboarding', '~> 2.0.0'
 
 end
