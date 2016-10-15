@@ -69,6 +69,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.tableView.separatorColor = UIColor.clear
         
+        self.mainStackView.isHidden = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,26 +100,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             loadContacts()
         }
         
-        
-        loadBackGroundColor()
-        
-        let borderColor = UIColor.lightGray.withAlphaComponent(0.6).cgColor
-        let borderWidth:CGFloat = 0
-        
-        imgFirstContactImage.layer.cornerRadius = imgFirstContactImage.layer.frame.height / 4
-        imgFirstContactImage.layer.borderWidth = borderWidth
-        imgFirstContactImage.layer.borderColor = borderColor
-        imgFirstContactImage.clipsToBounds = true
-        
-        imgSecondContactImage.layer.cornerRadius = imgSecondContactImage.layer.frame.height / 4
-        imgSecondContactImage.layer.borderWidth = borderWidth
-        imgSecondContactImage.layer.borderColor = borderColor
-        imgSecondContactImage.clipsToBounds = true
-        
-        imgThirdContactImage.layer.cornerRadius = imgThirdContactImage.layer.frame.height / 4
-        imgThirdContactImage.layer.borderWidth = borderWidth
-        imgThirdContactImage.layer.borderColor = borderColor
-        imgThirdContactImage.clipsToBounds = true
+        loadUI()
         
         authUser()
 
@@ -182,6 +165,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         appDelegate.requestForAccess { (accessGranted) -> Void in
             if accessGranted {
                 self.userAccessGranted = true;
+                self.loadContacts()
             }else{
                 self.userAccessGranted = false;
             }
@@ -246,6 +230,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func loadContacts(){
+        if dataArray == nil {
+            fetchContacts()
+        }
+        
+        if mainStackView.isHidden {
+            mainStackView.isHidden = false
+            loadUI()
+        }
+        
         intSelectedContacts = (Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ))
         
 //        imgFirstContactImage.image = (dataArray?[intSelectedContacts.first] as! Data).image
@@ -333,10 +326,36 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
+    func loadUI(){
+        loadBackGroundColor()
+        
+        let borderColor = UIColor.lightGray.withAlphaComponent(0.6).cgColor
+        let borderWidth:CGFloat = 0
+        
+        imgFirstContactImage.layer.cornerRadius = imgFirstContactImage.layer.frame.height / 4
+        imgFirstContactImage.layer.borderWidth = borderWidth
+        imgFirstContactImage.layer.borderColor = borderColor
+        imgFirstContactImage.clipsToBounds = true
+        
+        imgSecondContactImage.layer.cornerRadius = imgSecondContactImage.layer.frame.height / 4
+        imgSecondContactImage.layer.borderWidth = borderWidth
+        imgSecondContactImage.layer.borderColor = borderColor
+        imgSecondContactImage.clipsToBounds = true
+        
+        imgThirdContactImage.layer.cornerRadius = imgThirdContactImage.layer.frame.height / 4
+        imgThirdContactImage.layer.borderWidth = borderWidth
+        imgThirdContactImage.layer.borderColor = borderColor
+        imgThirdContactImage.clipsToBounds = true
+    }
+    
     func authUser(){
         if FIRAuth.auth()?.currentUser == nil{
             FIRAuth.auth()?.signInAnonymously() { (user, error) in
+                print(error)
             }
+        }
+        else{
+            print("Auth Successfull")
         }
     }
     
