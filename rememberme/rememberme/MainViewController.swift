@@ -69,7 +69,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.tableView.separatorColor = UIColor.clear
         
-        self.mainStackView.isHidden = true
+//        self.mainStackView.isHidden = true
         
     }
     
@@ -165,6 +165,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         appDelegate.requestForAccess { (accessGranted) -> Void in
             if accessGranted {
                 self.userAccessGranted = true;
+                self.fetchContacts()
                 self.loadContacts()
             }else{
                 self.userAccessGranted = false;
@@ -174,7 +175,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func fetchContacts()
     {
-        
         dataArray = NSMutableArray()
         
         let toFetch = [CNContactGivenNameKey, CNContactImageDataKey, CNContactFamilyNameKey, CNContactImageDataAvailableKey, CNContactPhoneNumbersKey, CNContactEmailAddressesKey, CNContactMiddleNameKey, CNContactOrganizationNameKey]
@@ -230,9 +230,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func loadContacts(){
-        if dataArray == nil {
-            fetchContacts()
-        }
         
         if mainStackView.isHidden {
             mainStackView.isHidden = false
@@ -346,6 +343,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         imgThirdContactImage.layer.borderWidth = borderWidth
         imgThirdContactImage.layer.borderColor = borderColor
         imgThirdContactImage.clipsToBounds = true
+        
+        self.view.layoutIfNeeded()
     }
     
     func authUser(){

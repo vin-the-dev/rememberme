@@ -10,6 +10,7 @@
 		22135B541D90092E000C4471 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22135B531D90092E000C4471 /* Data.swift */; };
 		22487F281D6F55B500E3526F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22487F271D6F55B500E3526F /* Extensions.swift */; };
 		225473F41DA5882700EF72D0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225473F31DA5882700EF72D0 /* AppConstants.swift */; };
+		2273CA241DB2ABA500FD55A1 /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273CA231DB2ABA500FD55A1 /* EZLoadingActivity.swift */; };
 		22C6468E1D96DE0D00F8168D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C6468D1D96DE0D00F8168D /* Assets.xcassets */; };
 		22C646901D97952A00F8168D /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6468F1D97952A00F8168D /* OnBoardingViewController.swift */; };
 		22D87B9C1D97BF240021995D /* NewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D87B9B1D97BF240021995D /* NewMainViewController.swift */; };
@@ -27,6 +28,7 @@
 		2218B0B21DB23C4400C13894 /* rememberme.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rememberme.entitlements; sourceTree = "<group>"; };
 		22487F271D6F55B500E3526F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Common/Extensions.swift; sourceTree = "<group>"; };
 		225473F31DA5882700EF72D0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = Common/AppConstants.swift; sourceTree = "<group>"; };
+		2273CA231DB2ABA500FD55A1 /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EZLoadingActivity.swift; path = Common/EZLoadingActivity.swift; sourceTree = "<group>"; };
 		22C6468D1D96DE0D00F8168D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22C6468F1D97952A00F8168D /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		22D87B9B1D97BF240021995D /* NewMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMainViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				22487F271D6F55B500E3526F /* Extensions.swift */,
 				225473F31DA5882700EF72D0 /* AppConstants.swift */,
+				2273CA231DB2ABA500FD55A1 /* EZLoadingActivity.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -156,7 +159,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = K4T72E2N9S;
 						DevelopmentTeamName = "Vineeth Vijayan";
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2273CA241DB2ABA500FD55A1 /* EZLoadingActivity.swift in Sources */,
 				22D87B9C1D97BF240021995D /* NewMainViewController.swift in Sources */,
 				22DD7ED61D6CB92500623BF7 /* MainViewController.swift in Sources */,
 				22D87B9E1D983E630021995D /* PermissionViewController.swift in Sources */,
@@ -379,10 +383,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = rememberme/rememberme.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K4T72E2N9S;
 				INFOPLIST_FILE = rememberme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.creativelogics.rememberme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2308888b-49de-4201-ae25-b2db06da359a";
+				PROVISIONING_PROFILE_SPECIFIER = "Remember Me Development";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -393,10 +401,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = rememberme/rememberme.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K4T72E2N9S;
 				INFOPLIST_FILE = rememberme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.creativelogics.rememberme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2308888b-49de-4201-ae25-b2db06da359a";
+				PROVISIONING_PROFILE_SPECIFIER = "Remember Me Development";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
