@@ -8,6 +8,7 @@
 
 import UIKit
 import Contacts
+import FirebaseAuth
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -29,12 +30,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var imgFirstContactImage: UIImageView!
     @IBOutlet weak var lblFirstContactName: UILabel!
+    @IBOutlet weak var lblFirstContactDetail: UILabel!
     
     @IBOutlet weak var imgSecondContactImage: UIImageView!
     @IBOutlet weak var lblSecondContactName: UILabel!
+    @IBOutlet weak var lblSecondContactDetail: UILabel!
     
     @IBOutlet weak var imgThirdContactImage: UIImageView!
     @IBOutlet weak var lblThirdContactName: UILabel!
+    @IBOutlet weak var lblThirdContactDetail: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     
     // Contact Details
@@ -42,12 +47,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        checkIfUserAccessGranted()
-        
-        fetchContacts()
-        
-        loadContacts()
         
         var swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
         swipe.direction = UISwipeGestureRecognizerDirection.right
@@ -70,35 +69,52 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.tableView.separatorColor = UIColor.clear
         
+//        self.mainStackView.isHidden = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let Defaults = UserDefaults.standard
         
-        loadBackGroundColor()
+        if Defaults["boolOnBoardingShown"] == nil {
+            let onBoarding = self.storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+            self.present(onBoarding, animated: true, completion: {
+                Defaults["boolOnBoardingShown"] = "Y" as AnyObject?
+            })
+        }
         
-        let borderColor = UIColor.lightGray.withAlphaComponent(0.6).cgColor
-        let borderWidth:CGFloat = 5.0
+        if Defaults["boolAskContactsPermissionShown"] == nil {
+            let askContactsPermission = self.storyboard?.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
+            self.present(askContactsPermission, animated: true, completion: {
+                Defaults["boolAskContactsPermissionShown"] = "Y" as AnyObject?
+            })
+        }
+        else{
+            self.checkIfUserAccessGranted()
+        }
         
-        imgFirstContactImage.layer.cornerRadius = imgFirstContactImage.layer.frame.height / 2
-        imgFirstContactImage.layer.borderWidth = borderWidth
-        imgFirstContactImage.layer.borderColor = borderColor
-        imgFirstContactImage.clipsToBounds = true
+        if userAccessGranted {
         
-        imgSecondContactImage.layer.cornerRadius = imgSecondContactImage.layer.frame.height / 2
-        imgSecondContactImage.layer.borderWidth = borderWidth
-        imgSecondContactImage.layer.borderColor = borderColor
-        imgSecondContactImage.clipsToBounds = true
+            fetchContacts()
         
-        imgThirdContactImage.layer.cornerRadius = imgThirdContactImage.layer.frame.height / 2
-        imgThirdContactImage.layer.borderWidth = borderWidth
-        imgThirdContactImage.layer.borderColor = borderColor
-        imgThirdContactImage.clipsToBounds = true
+            loadContacts()
+        }
+        
+        loadUI()
+        
+        authUser()
 
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if event?.subtype == UIEventSubtype.motionShake {
+            loadContacts()
+        }
     }
     
     // MARK: Table View Functions
@@ -132,14 +148,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             
             let email = selectedDetailContact.contactDetails[indexPath.row].value
-            let subject = "Remember me?".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let subject = mailSubject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             
-            let body = "Remembering your through this amazing app Remember me?".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            let body = mailBody.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
             let url = URL(string: "mailto:\(email)?subject=\(subject!)&body=\(body!)")
             UIApplication.shared.openURL(url!)
             
         }
     }
+    
 
     // MARK: Custom Functions
     
@@ -148,6 +165,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         appDelegate.requestForAccess { (accessGranted) -> Void in
             if accessGranted {
                 self.userAccessGranted = true;
+                self.fetchContacts()
+                self.loadContacts()
             }else{
                 self.userAccessGranted = false;
             }
@@ -156,7 +175,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func fetchContacts()
     {
-        
         dataArray = NSMutableArray()
         
         let toFetch = [CNContactGivenNameKey, CNContactImageDataKey, CNContactFamilyNameKey, CNContactImageDataAvailableKey, CNContactPhoneNumbersKey, CNContactEmailAddressesKey, CNContactMiddleNameKey, CNContactOrganizationNameKey]
@@ -178,17 +196,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     userImage = UIImage(named: "avatar-male")!
                 }
                 var name = "No Name"
+                var detail = " "
                 if contact.givenName != "" {
                     name = contact.givenName
                     if contact.middleName  != "" {
                         name += " " + contact.middleName
                     }
                     if contact.organizationName != "" {
-                        name += ", " + contact.organizationName
+                        detail = contact.organizationName
                     }
                 }
                 
-                let data = Data(name: name, image: userImage, contact: contact)
+            let data = Data(name: name, detail: detail, image: userImage, contact: contact)
                 self.dataArray?.add(data)
                 
             }
@@ -211,32 +230,42 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func loadContacts(){
+        
+        if mainStackView.isHidden {
+            mainStackView.isHidden = false
+            loadUI()
+        }
+        
         intSelectedContacts = (Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ), Int.random(lower: 0, ((dataArray?.count)! - 1) ))
         
-        imgFirstContactImage.image = (dataArray?[intSelectedContacts.first] as! Data).image
-        lblFirstContactName.text = (dataArray?[intSelectedContacts.first] as! Data).name
+//        imgFirstContactImage.image = (dataArray?[intSelectedContacts.first] as! Data).image
+        imgFirstContactImage.setImage((dataArray?[intSelectedContacts.first] as! Data).image, animated: true, duration: commonAnimationTime)
+        lblFirstContactName.setText((dataArray?[intSelectedContacts.first] as! Data).name, animated: true, duration: commonAnimationTime)
+        lblFirstContactDetail.setText((dataArray?[intSelectedContacts.first] as! Data).detail, animated: true, duration: commonAnimationTime)
         
-        imgSecondContactImage.image = (dataArray?[intSelectedContacts.second] as! Data).image
-        lblSecondContactName.text = (dataArray?[intSelectedContacts.second] as! Data).name
+        imgSecondContactImage.setImage((dataArray?[intSelectedContacts.second] as! Data).image, animated: true, duration: commonAnimationTime)
+        lblSecondContactName.setText((dataArray?[intSelectedContacts.second] as! Data).name, animated: true, duration: commonAnimationTime)
+        lblSecondContactDetail.setText((dataArray?[intSelectedContacts.second] as! Data).detail, animated: true, duration: commonAnimationTime)
         
-        imgThirdContactImage.image = (dataArray?[intSelectedContacts.third] as! Data).image
-        lblThirdContactName.text = (dataArray?[intSelectedContacts.third] as! Data).name
+        imgThirdContactImage.setImage((dataArray?[intSelectedContacts.third] as! Data).image, animated: true, duration: commonAnimationTime)
+        lblThirdContactName.setText((dataArray?[intSelectedContacts.third] as! Data).name, animated: true, duration: commonAnimationTime)
+        lblThirdContactDetail.setText((dataArray?[intSelectedContacts.third] as! Data).detail, animated: true, duration: commonAnimationTime) 
         
     }
     
     func loadBackGroundColor() {
-        
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = view.bounds
-        
-        let c1 = UIColor(hexString: "#fceabb")!.cgColor
-        let c2 = UIColor(hexString: "#f8b500")!.cgColor
-        
-        gradient.colors = [c1, c2]
-        gradient.frame = self.view.bounds
-        
-        self.view.layer.insertSublayer(gradient, at: 0)
-        
+//        
+//        let gradient: CAGradientLayer = CAGradientLayer()
+//        gradient.frame = view.bounds
+//        
+//        let c1 = UIColor(hexString: "#fceabb")!.cgColor
+//        let c2 = UIColor(hexString: "#f8b500")!.cgColor
+//        
+//        gradient.colors = [c1, c2]
+//        gradient.frame = self.view.bounds
+//        
+//        self.view.layer.insertSublayer(gradient, at: 0)
+        self.view.backgroundColor = UIColor.green
     }
     
     func firstStackViewTapped() {
@@ -292,6 +321,41 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         tableView.reloadData()
+    }
+    
+    func loadUI(){
+        loadBackGroundColor()
+        
+        let borderColor = UIColor.lightGray.withAlphaComponent(0.6).cgColor
+        let borderWidth:CGFloat = 0
+        
+        imgFirstContactImage.layer.cornerRadius = imgFirstContactImage.layer.frame.height / 4
+        imgFirstContactImage.layer.borderWidth = borderWidth
+        imgFirstContactImage.layer.borderColor = borderColor
+        imgFirstContactImage.clipsToBounds = true
+        
+        imgSecondContactImage.layer.cornerRadius = imgSecondContactImage.layer.frame.height / 4
+        imgSecondContactImage.layer.borderWidth = borderWidth
+        imgSecondContactImage.layer.borderColor = borderColor
+        imgSecondContactImage.clipsToBounds = true
+        
+        imgThirdContactImage.layer.cornerRadius = imgThirdContactImage.layer.frame.height / 4
+        imgThirdContactImage.layer.borderWidth = borderWidth
+        imgThirdContactImage.layer.borderColor = borderColor
+        imgThirdContactImage.clipsToBounds = true
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    func authUser(){
+        if FIRAuth.auth()?.currentUser == nil{
+            FIRAuth.auth()?.signInAnonymously() { (user, error) in
+                print(error)
+            }
+        }
+        else{
+            print("Auth Successfull")
+        }
     }
     
 }
