@@ -9,5 +9,5 @@
 import Foundation
 
 let commonAnimationTime = 0.50
-let mailSubject = "Remember me?"
-let mailBody = "Remembering your through this amazing app <b>Random Contacts</b>"
+let mailSubject = "Re-Connect!"
+let mailBody = "Remembering your through this amazing app <b>Re-Connect</b>"

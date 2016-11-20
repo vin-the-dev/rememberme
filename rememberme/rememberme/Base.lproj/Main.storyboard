@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -21,6 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf9-U4-dwP">
+                                <rect key="frame" x="329" y="28" width="30" height="30"/>
                                 <state key="normal" title="Skip"/>
                                 <connections>
                                     <action selector="btnSkipClicked:" destination="wYN-Mk-Ui7" eventType="touchUpInside" id="9GX-nX-R3v"/>
@@ -53,38 +57,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-Yv-jdW"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-Yv-jdW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-qb-TSg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="znX-26-hHM">
+                                <rect key="frame" x="8" y="20" width="351" height="639"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="euG-yU-OGr">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="145"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJ7-PN-xHO">
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="145"/>
                                                 <subviews>
                                                     <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtW-Sj-Zlj">
+                                                        <rect key="frame" x="-12" y="0.0" width="375" height="145"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CzQ-pW-u2e">
-                                                            <frame key="frameInset"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </view>
                                                         <blurEffect style="light"/>
                                                     </visualEffectView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1a4-aY-IhU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="351" height="145"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-male" translatesAutoresizingMaskIntoConstraints="NO" id="z0P-YG-uNm">
+                                                                <rect key="frame" x="0.0" y="5.5" width="133.5" height="133.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="z0P-YG-uNm" secondAttribute="height" multiplier="1:1" id="gJO-SR-WAe"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1X1-Mb-MVP">
+                                                                <rect key="frame" x="143.5" y="50" width="207.5" height="45"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNd-ni-r8D">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="207.5" height="24"/>
                                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leI-C3-zeR">
+                                                                        <rect key="frame" x="0.0" y="24" width="207.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -108,31 +124,39 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zpy-jM-uBw">
+                                        <rect key="frame" x="0.0" y="165" width="351" height="144.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddB-XV-UPn">
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="144.5"/>
                                                 <subviews>
                                                     <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncJ-pU-6HG">
+                                                        <rect key="frame" x="-12" y="0.0" width="375" height="144.5"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JIW-fy-Blu">
-                                                            <frame key="frameInset"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="144.5"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </view>
                                                         <blurEffect style="light"/>
                                                     </visualEffectView>
                                                     <stackView opaque="NO" tag="10" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HGa-hX-t5c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="351" height="144.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-female" translatesAutoresizingMaskIntoConstraints="NO" id="6yd-Lp-wEp">
+                                                                <rect key="frame" x="0.0" y="5.5" width="133.5" height="133.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="6yd-Lp-wEp" secondAttribute="height" multiplier="1:1" id="Mca-P5-l7H"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p0c-Ay-occ">
+                                                                <rect key="frame" x="143.5" y="49.5" width="207.5" height="45"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-V6-GNz">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="207.5" height="24"/>
                                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5h-cd-TCe">
+                                                                        <rect key="frame" x="0.0" y="24" width="207.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -156,31 +180,39 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="80S-zT-eRH">
+                                        <rect key="frame" x="0.0" y="329.5" width="351" height="145"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1g-uW-NIw">
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="145"/>
                                                 <subviews>
                                                     <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWG-Wq-ar5">
+                                                        <rect key="frame" x="-12" y="0.0" width="375" height="145"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VFG-h7-oxR">
-                                                            <frame key="frameInset"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </view>
                                                         <blurEffect style="light"/>
                                                     </visualEffectView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oA6-Qz-JDB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="351" height="145"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-male" translatesAutoresizingMaskIntoConstraints="NO" id="B4s-sZ-1gX">
+                                                                <rect key="frame" x="0.0" y="5.5" width="133.5" height="133.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="B4s-sZ-1gX" secondAttribute="height" multiplier="1:1" id="NR4-Vn-2Qw"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OKc-iA-xG8">
+                                                                <rect key="frame" x="143.5" y="50" width="207.5" height="45"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6B-kw-J92">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="207.5" height="24"/>
                                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4M-uS-KEb">
+                                                                        <rect key="frame" x="0.0" y="24" width="207.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -204,31 +236,35 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tib-gO-ZgC">
+                                        <rect key="frame" x="0.0" y="494.5" width="351" height="144.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qen-dA-b7p">
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="96.5"/>
                                                 <subviews>
                                                     <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6j-bw-gSh">
+                                                        <rect key="frame" x="-8" y="0.0" width="375" height="144.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="24z-nT-T8N">
+                                                        <rect key="frame" x="-12" y="0.0" width="375" height="96.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" textLabel="Xkx-lI-guh" detailTextLabel="xal-Ac-r3f" style="IBUITableViewCellStyleSubtitle" id="4dZ-Js-RHM">
                                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4dZ-Js-RHM" id="JiE-ww-Raa">
-                                                                    <frame key="frameInset" width="375" height="43.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xkx-lI-guh">
-                                                                            <frame key="frameInset" minX="15" minY="6" width="24.5" height="14.5"/>
+                                                                            <rect key="frame" x="15" y="5" width="25" height="15"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xal-Ac-r3f">
-                                                                            <frame key="frameInset" minX="15" minY="20.5" width="39.5" height="18"/>
+                                                                            <rect key="frame" x="15" y="20" width="40" height="18"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <nil key="textColor"/>
@@ -253,11 +289,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCF-4j-bXa">
+                                                <rect key="frame" x="0.0" y="104.5" width="351" height="40"/>
                                                 <subviews>
                                                     <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffl-zg-bzP">
+                                                        <rect key="frame" x="-8" y="0.0" width="375" height="40"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook" translatesAutoresizingMaskIntoConstraints="NO" id="U3g-kx-Sd5">
+                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook" translatesAutoresizingMaskIntoConstraints="NO" id="U3g-kx-Sd5">
+                                                        <rect key="frame" x="155.5" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="UeM-JD-f8c"/>
                                                             <constraint firstAttribute="height" constant="40" id="sC8-De-ntw"/>
@@ -285,7 +324,8 @@
                                     <constraint firstItem="6yd-Lp-wEp" firstAttribute="height" secondItem="z0P-YG-uNm" secondAttribute="height" id="s3c-Dm-uTW"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="wQw-xc-4dY">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="wQw-xc-4dY">
+                                <rect key="frame" x="334" y="20" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="FaA-j3-d6u"/>
                                     <constraint firstAttribute="width" constant="25" id="u3U-Ds-VDF"/>
@@ -358,39 +398,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="center-background" translatesAutoresizingMaskIntoConstraints="NO" id="L5c-0t-Wnn">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="fSf-id-jKW"/>
                                     <constraint firstAttribute="width" constant="200" id="q9W-Du-hjw"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="aH4-gu-nSv">
+                                <rect key="frame" x="165" y="311" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="FaK-uY-AIl"/>
                                     <constraint firstAttribute="width" constant="45" id="eqA-0y-bpP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtC-Dl-o9p">
+                                <rect key="frame" x="15" y="50" width="345" height="28"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-1h-rAM">
+                                <rect key="frame" x="15" y="448.5" width="345" height="21"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button-border" translatesAutoresizingMaskIntoConstraints="NO" id="3jX-sU-ALU">
+                                <rect key="frame" x="62.5" y="597" width="250" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="A4J-P9-CiO"/>
                                     <constraint firstAttribute="width" constant="250" id="fCr-Ix-iYL"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-xF-xtr">
+                                <rect key="frame" x="62.5" y="597" width="250" height="50"/>
                                 <connections>
                                     <action selector="btnActionClicked:" destination="rc6-bu-s18" eventType="touchUpInside" id="7AF-Bc-pKo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWl-BG-XhA">
+                                <rect key="frame" x="167" y="610" width="41" height="24"/>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -441,42 +488,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-Hf-qGQ"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-Hf-qGQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiH-zQ-lsA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="JBL-cJ-MrI">
+                                <rect key="frame" x="334" y="20" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="J00-KC-BrN"/>
                                     <constraint firstAttribute="height" constant="25" id="rxz-hI-Wdh"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NU6-Np-nEr">
+                                <rect key="frame" x="0.0" y="45" width="375" height="622"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKn-zx-Ee0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-b3-MC7">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qoy-Ar-aD1">
-                                                    <frame key="frameInset"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </view>
                                                 <blurEffect style="light"/>
                                             </visualEffectView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GhA-UX-tpq">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-female" translatesAutoresizingMaskIntoConstraints="NO" id="TSQ-Hu-bbT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="TSQ-Hu-bbT" secondAttribute="height" multiplier="1:1" id="qKe-oP-3AV"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="oYy-s8-EI7">
+                                                        <rect key="frame" x="161" y="49" width="214" height="42"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7Z-jX-tms">
+                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jb-Gb-Cwa">
+                                                                <rect key="frame" x="0.0" y="21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -499,29 +558,36 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPQ-fA-ATr">
+                                        <rect key="frame" x="0.0" y="161" width="375" height="140"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6n-a2-SW9">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="soF-iQ-inA">
-                                                    <frame key="frameInset"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </view>
                                                 <blurEffect style="light"/>
                                             </visualEffectView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hME-R8-dg6">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-male" translatesAutoresizingMaskIntoConstraints="NO" id="pGO-Af-zzR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="141" height="140"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="pGO-Af-zzR" secondAttribute="height" multiplier="1:1" id="J7k-7S-RSI"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9rJ-qJ-alB">
+                                                        <rect key="frame" x="161" y="49" width="214" height="42"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkG-ts-xSQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1J-kO-sZB">
+                                                                <rect key="frame" x="0.0" y="21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -544,29 +610,36 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNc-sO-JWe">
+                                        <rect key="frame" x="0.0" y="321" width="375" height="141"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-9c-pvM">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="veG-uc-k2G">
-                                                    <frame key="frameInset"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </view>
                                                 <blurEffect style="light"/>
                                             </visualEffectView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eUY-Ax-Daa">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-female" translatesAutoresizingMaskIntoConstraints="NO" id="Vtw-Os-Ohg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Vtw-Os-Ohg" secondAttribute="height" multiplier="1:1" id="C1x-Jf-jY0"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3q0-0O-wZW">
+                                                        <rect key="frame" x="161" y="49" width="214" height="42"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label ajsbdkjas " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYi-yf-hZp">
+                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVC-Qr-Ked">
+                                                                <rect key="frame" x="0.0" y="21" width="42" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -589,6 +662,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BlN-gf-qyU">
+                                        <rect key="frame" x="0.0" y="482" width="375" height="140"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
                                 </subviews>

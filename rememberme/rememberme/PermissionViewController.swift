@@ -27,12 +27,14 @@ class PermissionViewController: UIViewController {
         
         switch permissionType {
         case .Notification:
+            self.view.backgroundColor = UIColor(hexString: "2ECC71")
             lblMainText.text = "Please let us send you notifications"
             lblSubText.text = "You can turn it of any time you want"
             lblButtonText.text = "Ok Got it."
             imgCenterImage.image = #imageLiteral(resourceName: "Notification")
             break
         default:
+            self.view.backgroundColor = UIColor(hexString: "8359CC")
             lblMainText.text = "Please give us access to your Contacts"
             lblSubText.text = "We will use it show you 3 contacts per day"
             lblButtonText.text = "Ok Got it."
@@ -51,6 +53,7 @@ class PermissionViewController: UIViewController {
     @IBAction func btnActionClicked(_ sender: AnyObject) {
         switch permissionType {
         case .Notification:
+            appDelegate.notificationPermission()
             print("Notification")
             break
         default:

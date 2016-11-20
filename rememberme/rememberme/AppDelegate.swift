@@ -48,11 +48,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        print(deviceToken)
+//    }
+    
+    private func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Device Token")
         print(deviceToken)
         
+//        FIRInstanceID.instanceID().setAPNSToken(deviceToken as! Data, type: FIRInstanceIDAPNSTokenType.sandbox)
+        FIRMessaging.messaging().subscribe(toTopic: "/topics/allusers")
+        //        let token = FIRInstanceID.instanceID().token()!
+        //        print(token)
     }
-    
     // MARK: Custom functions
     
     class func getAppDelegate() -> AppDelegate {
@@ -120,6 +129,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         UIApplication.shared.registerForRemoteNotifications()
+        
+        FIRMessaging.messaging().subscribe(toTopic: "/topics/allusers")
     }
 
 }

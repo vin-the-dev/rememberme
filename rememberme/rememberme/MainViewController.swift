@@ -8,7 +8,10 @@
 
 import UIKit
 import Contacts
+import Firebase
 import FirebaseAuth
+import FirebaseMessaging
+import FirebaseDatabase
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -42,11 +45,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
+    var ref: FIRDatabaseReference!
+    
     // Contact Details
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        lblFirstContactName.text = ""
+        lblFirstContactDetail.text = ""
+        
+        lblSecondContactName.text = ""
+        lblSecondContactDetail.text = ""
+        
+        lblThirdContactName.text = ""
+        lblThirdContactDetail.text = ""
+        
         
         var swipe = UISwipeGestureRecognizer(target: self, action: #selector(MainViewController.viewSwiped))
         swipe.direction = UISwipeGestureRecognizerDirection.right
@@ -93,6 +108,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.checkIfUserAccessGranted()
         }
         
+        if Defaults["boolAskNotificationPermissionShown"] == nil {
+            let askNotificationPermission = self.storyboard?.instantiateViewController(withIdentifier: "PermissionViewController") as! PermissionViewController
+            askNotificationPermission.permissionType = .Notification
+            self.present(askNotificationPermission, animated: true, completion: {
+                Defaults["boolAskNotificationPermissionShown"] = "Y" as AnyObject?
+            })
+        }
+        else{
+            self.checkIfUserAccessGranted()
+        }
+        
         if userAccessGranted {
         
             fetchContacts()
@@ -103,6 +129,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         loadUI()
         
         authUser()
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            self.ref = FIRDatabase.database().reference().child("users").child((user.uid))
+        }
 
     }
     
@@ -216,7 +246,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
         
-        print(dataArray?.count)
+//        print(dataArray?.count)
         
         //self.tableView.reloadData()
         
@@ -225,6 +255,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //MARK: Custom Functions
     
     func viewSwiped() {
+        if ref == nil {
+            return
+        }
+        
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            var value = 0
+            if snapshot.hasChild("swipe"){
+                if snapshot.value != nil{
+                    value = Int((snapshot.childSnapshot(forPath: "swipe").value as! NSString).intValue)
+                }
+            }
+            value = value + 1
+            self.ref.child("swipe").setValue("\(value)")
+        })
+        
         loadContacts()
         loadContactDetails()
     }
@@ -350,11 +395,35 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func authUser(){
         if FIRAuth.auth()?.currentUser == nil{
             FIRAuth.auth()?.signInAnonymously() { (user, error) in
-                print(error)
+                print(error!)
+                self.updateUserData()
             }
         }
         else{
-            print("Auth Successfull")
+            let currentUser = FIRAuth.auth()?.currentUser
+            currentUser?.getTokenForcingRefresh(true) {idToken, error in
+                if error != nil {
+                    FIRAuth.auth()?.signInAnonymously() { (user, error) in
+                        print(error!)
+                        self.updateUserData()
+                    }
+                    return;
+                }
+                print("Auth Successfull")
+                
+                // Send token to your backend via HTTPS
+                // ...
+            }
+        }
+    }
+    
+    func updateUserData() {
+        
+        if let token = FIRInstanceID.instanceID().token() {
+            if let user = FIRAuth.auth()?.currentUser {
+                self.ref = FIRDatabase.database().reference().child("users").child((user.uid))
+                self.ref.updateChildValues(["fcm_token": token, "last_login": NSDate().description])
+            }
         }
     }
     
